@@ -1,0 +1,64 @@
+*,
+*:after,
+*::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body { height: 100%; }
+
+.animation {
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    -webkit-perspective:2000px;
+    -moz-perspective:2000px;
+    -o-perspective: 2000px;
+    perspective: 2000px;
+}
+
+.cube {
+    background: #C2C2C2;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /*top: 0;
+    left: 0;*/
+    right: 0;
+    top:0;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+
+
+/*****************************************************/
+/*.pt-perspective {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    -webkit-perspective: 1200px;
+    -moz-perspective: 1200px;
+    perspective: 1200px;
+}*/
+
+/*.pt-page {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+}*/
