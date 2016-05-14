@@ -355,26 +355,25 @@ h1, p {
  float: right;
 }
 #homeTitle{
-    background:#FFFFFF;
-    opacity: 0.7;
-    height: 100%;
-    color: #0a3b64;
-    font-family: Lucida Console;
-    font-size: 6em;
+    color: white;
+    font-family: monospace;
+    font-size: 3em;
     font-weight: bold;
+    height: 100%;
     margin: 0;
+    opacity: 0.7;
+    padding: 2%;
     position: absolute;
     right: 0;
-    padding: 2%;
-    width: 55%;
     text-align: center;
     top: 0;
+    width: 55%;
     z-index: 6;
 }
 
 #homep {
     position:relative;
-    background:url("../img/space7.jpg");
+    background:url("../img/space8.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
     overflow:hidden;
