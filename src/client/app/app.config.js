@@ -4,6 +4,5 @@
 (function(){
     angular.module('seasafe')
         .config(function(){
-            console.info('app.config.js');
         })
 })();

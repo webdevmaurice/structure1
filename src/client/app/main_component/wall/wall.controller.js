@@ -5,7 +5,6 @@
     angular.module('seasafe')
         .controller('WallController', ['$timeout','$mdMedia','$sce',function($timeout,$mdMedia, $sce){
             var wvm = this;
-            console.info('WallController');
 
             /*wvm.posts = buildGridModel({
                 icon : "avatar:svg-",
@@ -94,7 +93,6 @@
                     it.span  = { row : 1, col : 1 };
                     it.post.type = Math.floor((Math.random() * 3) + 1);
                     it.poster = Math.floor((Math.random() * 4));
-                    console.log(it.poster)
                     var palette = palettes[it.poster];
                     it.quotient = Math.floor((Math.random() * 9));
                     it.fromColor = palette[0][it.quotient];

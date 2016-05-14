@@ -10,19 +10,16 @@ angular.module('seasafe')
         vm.data = [];
         vm.noms = ['Pression atmosphérique',"Niveau d'oxygen",'Efficence Moteur','Niveau battery', 'RPM'];
         vm.fnAtmos = function() {
-            console.log('PRESSURE');
             $http({
                 method: 'GET',
                 url: 'server/webservice/pressure.php'
             }).then(function successCallback(response) {
                 // this callback will be called asynchronously
                 // when the response is available
-                console.log(response);
                 vm.data = response.data;
             }, function errorCallback(response) {
                 // called asynchronously if an error occurs
                 // or server returns response with an error status.
-                console.log(response);
             });
         };
         setInterval(function(){
@@ -113,7 +110,6 @@ angular.module('seasafe')
 
                     // navigation menu links.
                     // scroll to the respective section.
-                    console.log('initialized events');
                     $links.on( 'click.Scrolling', function( event ) {
 
                         // scroll to the element that has id = menu's href
@@ -151,7 +147,6 @@ angular.module('seasafe')
                         },
                         // when scrolling the page change the position of each row
                         'scroll.Scrolling' : function( event ) {
-                            console.log('TEST');
                             // set a timeout to avoid that the
                             // placeRows function gets called on every scroll trigger
                             if( anim ) return false;
@@ -241,7 +236,6 @@ angular.module('seasafe')
                             var rowT	= $row.offset().top - 580;//Arvind set transition start point
                         }
 
-                        console.log($window.innerHeight, $window.innerWidth);
                         // hide the row if it is under the viewport
                         if( rowT > winSize.height + winscroll ) {
 
@@ -476,7 +470,6 @@ angular.module('seasafe')
                     vm.isHuman = true;
                     vm.isParcel=false;
                     vm.fnHuman();
-                    console.log('selected left');
                     $('.intro-content').css({opacity:0});
                     reset();
                     classie.add( splitlayout, 'open-left' );
