@@ -9,13 +9,13 @@
 
             $('#closeCarte').click(function(){
                 $('#overlayCarte').fadeOut();
-                $('#imgs').hide();
-                $('#imgs').children().hide();
+                $('.imagess').hide();
+                $('.imagess').children().hide();
             });
-function openOverlay(){
+function openOverlay(div){
     $('#overlayCarte').show();
-    $('#imgs').show();
-    $('#imgs').animate({
+    $(div).show();
+    $(div).animate({
         width: "70%",
     }, 1500);
 }
@@ -54,8 +54,8 @@ function openOverlay(){
                 var infoMauritius = new google.maps.InfoWindow({content:"Mauritius"});
                 google.maps.event.addListener(markermauritius, 'click', function() {
                     //infoMauritius.open(map,markermauritius);
-                    openOverlay()
-                    $('#imgs .mau').show();
+                    openOverlay('#imgsMau');
+                    $('#imgsMau *').show();
                 });
 
                 //australia
@@ -65,39 +65,59 @@ function openOverlay(){
                 //infoAustralia.open(map,markeraustralia);
                 google.maps.event.addListener(markeraustralia, 'click', function() {
                     //infoAustralia.close();
-                    openOverlay()
-                        $('#imgs .aus').show();
-
+                    openOverlay('#imgsAus');
+                        $('#imgsAus *').show();
                 });
                 //asia
                 var markerasia=new google.maps.Marker({position:asia,zIndex : -100});
                 markerasia.setMap(map);
                 var infoAsia = new google.maps.InfoWindow({content:"Asia"});
-                infoAsia.open(map,markerasia);
+                //infoAsia.open(map,markerasia);
+                google.maps.event.addListener(markerasia, 'click', function() {
+                    openOverlay('#imgsAsia')
+                    $('#imgsAsia *').show();
+                });
 
                 //europe
                 var markereurope=new google.maps.Marker({position:europe,zIndex : -100});
                 markereurope.setMap(map);
                 var infoEurope = new google.maps.InfoWindow({content:"europe"});
-                infoEurope.open(map,markereurope);
+                //infoEurope.open(map,markereurope);
+                google.maps.event.addListener(markereurope, 'click', function() {
+                    openOverlay('#imgsEurope')
+                    $('#imgsEurope *').show();
+                });
 
                 //northAmerica
                 var markernorthAmerica=new google.maps.Marker({position:northAmerica,});
                 markernorthAmerica.setMap(map);
                 var infoNorthAmerica = new google.maps.InfoWindow({content:"northAmerica"});
-                infoNorthAmerica.open(map,markernorthAmerica);
+                //infoNorthAmerica.open(map,markernorthAmerica);
+                google.maps.event.addListener(markernorthAmerica, 'click', function() {
+                    openOverlay('#imgsNA')
+                    $('#imgsNA *').show();
+                });
 
                 //southAmerica
                 var markersouthAmerica=new google.maps.Marker({position:southAmerica,});
                 markersouthAmerica.setMap(map);
                 var infoSouthAmerica = new google.maps.InfoWindow({content:"SouthAmerica"});
-                infoSouthAmerica.open(map,markersouthAmerica);
+                //infoSouthAmerica.open(map,markersouthAmerica);
+                google.maps.event.addListener(markersouthAmerica, 'click', function() {
+                    openOverlay('#imgsSA')
+                    $('#imgsSA *').show();
+                });
 
                 //africa
                 var markerafrica=new google.maps.Marker({position:africa,});
                 markerafrica.setMap(map);
                 var infoAfrica = new google.maps.InfoWindow({content:"africa"});
-                infoAfrica.open(map,markerafrica);
+                //infoAfrica.open(map,markerafrica);
+                google.maps.event.addListener(markerafrica, 'click', function() {
+                    openOverlay('#imgsAfr')
+                    $('#imgsAfr *').show();
+                });
+
                 var styles = [
                     {
                         featureType: "all",

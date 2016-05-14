@@ -1,4 +1,4 @@
-#imgs img{
+.imagess img{
     width: 30%;
     height: 30%;
     display: inline-block;
@@ -9,11 +9,11 @@
     margin: 5px;
 }
 
-#imgs .aus{
+.imagess *{
     display: none;
 }
 
-#imgs{
+.imagess{
     float: left;
     top:0 !important;
     z-index: 1010;
