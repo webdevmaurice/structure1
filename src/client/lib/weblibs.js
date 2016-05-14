@@ -3,4 +3,4 @@
  * weblibs 1.0.0
  */
 
-angular.module('weblibs',['ngAnimate','ngMaterial','ngMdIcons','materialCalendar','pascalprecht.translate','ngRoute','chart.js', 'angularTypewrite']);
+angular.module('weblibs',['ngAnimate','ngMaterial','ngMdIcons','ngRoute']);

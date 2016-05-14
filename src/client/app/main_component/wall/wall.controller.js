@@ -3,7 +3,7 @@
  */
 (function(){
     angular.module('seasafe')
-        .controller('WallController', ['$timeout','$mdMedia',function($timeout,$mdMedia){
+        .controller('WallController', ['$timeout','$mdMedia','$sce',function($timeout,$mdMedia, $sce){
             var wvm = this;
             console.info('WallController');
 
@@ -44,7 +44,7 @@
                     ['#1bbaa9','#18a495','#158e80','#12776c','#0e6158','#0B4B44','#083530','#041f1c','#010808','#000000']
                 ],
                 [
-                    ['#d2d789','#cbd176','#c4ca63','#bcc450','#b3bb3f','#A1A839','#8f9533','#7c822c','#6a6f26','#585c1f']
+                    ['#d2d789','#cbd176','#c4ca63','#bcc450','#b3bb3f','#A1A839','#8f9533','#7c822c','#6a6f26','#585c1f'],
                     ['#d4df2a','#c5d01f','#b0b91c','#9ba319','#868d15','#717712','#5c610f','#474b0b','#323508','#1d1e05']
                 ]
             ];
@@ -71,6 +71,17 @@
                 "ss2.jpg",
                 "ss3.jpg"
             ];
+
+            var vidPosts = [
+                "https://www.youtube.com/embed/WkYz43qALMU",
+                "https://www.youtube.com/embed/CwFs9vxGN4o",
+                "https://www.youtube.com/embed/sgzeM9cjBSg",
+                "https://www.youtube.com/embed/_gJdhW71ypA",
+                "https://www.youtube.com/embed/utCthS3vDxc",
+                "https://www.youtube.com/embed/EeSQCWRR1xY",
+                "https://www.youtube.com/embed/ZCpAHhnlMUY",
+                "https://www.youtube.com/embed/v41xlQB_PY4"
+            ];
             wvm.posts = buildGridModel(wvm.postTemplate);
 
             function buildGridModel(tileTmpl){
@@ -82,7 +93,8 @@
                     it.title = it.title + (j+1);
                     it.span  = { row : 1, col : 1 };
                     it.post.type = Math.floor((Math.random() * 3) + 1);
-                    it.poster = Math.floor((Math.random() * 3));
+                    it.poster = Math.floor((Math.random() * 4));
+                    console.log(it.poster)
                     var palette = palettes[it.poster];
                     it.quotient = Math.floor((Math.random() * 9));
                     it.fromColor = palette[0][it.quotient];
@@ -97,10 +109,14 @@
                         it.id = 'text' + j;
                         it.post.type = 'text';
                         it.post.data = textsPosts[Math.floor((Math.random() * 9))];
-                    } else {
+                    } else if (it.post.type==2) {
                         it.id = 'img' + j;
                         it.post.type = 'img';
                         it.post.data = 'client/assets/img/' + imgPosts[Math.floor((Math.random() * 6))];
+                    } else if (it.post.type==3){
+                        it.id = 'vid' + j;
+                        it.post.type = 'vid';
+                        it.post.data = $sce.trustAsResourceUrl(vidPosts[Math.floor((Math.random() * 8))]);
                     }
                     it.likes = Math.floor((Math.random() * 100) + 1);
                     it.comments = Math.floor((Math.random() * 100) + 1);

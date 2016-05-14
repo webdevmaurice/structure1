@@ -1,66 +1,81 @@
-<md-content layout="column" style="overflow: hidden">
-    <md-input-container>
-        <label>Nom Astronaute</label>
-        <input ng-model="wvm.filtre">
-    </md-input-container>
-    <md-grid-list
-            md-cols="64"
-            md-row-height="1:1"
-            md-gutter="8px"
-            md-gutter-gt-sm="4px"
-            flex>
-        <md-grid-tile
-                ng-repeat="tile in wvm.posts | filter:wvm.filtre"
+<md-content>
+    <md-tabs md-dynamic-height md-border-bottom>
+        <md-tab label="Mosaic">
+            <md-content layout="column" style="overflow: hidden">
+                <md-input-container>
+                    <label>Nom Astronaute</label>
+                    <input ng-model="wvm.filtre">
+                </md-input-container>
+                <md-grid-list
+                        md-cols="64"
+                        md-row-height="1:1"
+                        md-gutter="8px"
+                        md-gutter-gt-sm="4px"
+                        flex>
+                    <md-grid-tile
+                            ng-repeat="tile in wvm.posts | filter:wvm.filtre"
 
-                md-rowspan-xs="{{wvm.getRowspan(tile,'xs')}}"
-                md-rowspan-sm="{{wvm.getRowspan(tile,'sm')}}"
-                md-rowspan-md="{{wvm.getRowspan(tile,'md')}}"
-                md-rowspan-lg="{{wvm.getRowspan(tile,'lg')}}"
-                md-rowspan-xl="{{wvm.getRowspan(tile,'xl')}}"
+                            md-rowspan-xs="{{wvm.getRowspan(tile,'xs')}}"
+                            md-rowspan-sm="{{wvm.getRowspan(tile,'sm')}}"
+                            md-rowspan-md="{{wvm.getRowspan(tile,'md')}}"
+                            md-rowspan-lg="{{wvm.getRowspan(tile,'lg')}}"
+                            md-rowspan-xl="{{wvm.getRowspan(tile,'xl')}}"
 
-                md-colspan-xs="{{wvm.getColspan(tile,'xs')}}"
-                md-colspan-sm="{{wvm.getColspan(tile,'sm')}}"
-                md-colspan-md="{{wvm.getColspan(tile,'md')}}"
-                md-colspan-lg="{{wvm.getColspan(tile,'lg')}}"
-                md-colspan-xl="{{wvm.getColspan(tile,'xl')}}"
+                            md-colspan-xs="{{wvm.getColspan(tile,'xs')}}"
+                            md-colspan-sm="{{wvm.getColspan(tile,'sm')}}"
+                            md-colspan-md="{{wvm.getColspan(tile,'md')}}"
+                            md-colspan-lg="{{wvm.getColspan(tile,'lg')}}"
+                            md-colspan-xl="{{wvm.getColspan(tile,'xl')}}"
 
-                ng-class="tile.background"
-                class="gridListdemoDynamicTiles"
-                layout="column">
-            <!--md-icon md-svg-icon="{{tile.icon}}"></md-icon>
-            <img src="http://lunaf.com/img/space/moon-from-earth.png"/>
-            <md-grid-tile-footer><h3>hello</h3></md-grid-tile-footer-->
-            <div>
-                <md-card
-                        style="height: 100%; width: 100%; position: absolute; right: 0; top: 0;"
-                        ng-style="{'background-color':tile.fromColor, background: 'linear-gradient({{tile.fromColor}}, {{tile.toColor}})'}">
-                    <md-card-header>
-                        <md-card-avatar>
-                            <md-icon>verified_user</md-icon>
-                        </md-card-avatar>
-                        <md-card-header-text>
-                            <span class="md-title">{{tile.poster}}</span>
-                        </md-card-header-text>
-                    </md-card-header>
-                    <md-card-content>
-                        <div ng-if="tile.post.type=='text'">
-                            {{tile.post.data}}
+                            ng-class="tile.background"
+                            class="gridListdemoDynamicTiles"
+                            layout="column">
+                        <div>
+                            <md-card
+                                    style="height: 100%; width: 100%; position: absolute; right: 0; top: 0;"
+                                    ng-style="{'background-color':tile.fromColor, background: 'linear-gradient({{tile.fromColor}}, {{tile.toColor}})'}">
+                                <md-card-header>
+                                    <md-card-avatar>
+                                        <md-icon>verified_user</md-icon>
+                                    </md-card-avatar>
+                                    <md-card-header-text>
+                                        <span class="md-headline">{{tile.poster}}</span>
+                                        <span class="md-subhead">{{tile.quotient + 1 }} J'aime</span>
+                                    </md-card-header-text>
+                                </md-card-header>
+                                <md-card-content>
+                                    <div ng-if="tile.post.type=='text'">
+                                        {{tile.post.data}}
+                                    </div>
+                                    <div class="img" ng-if="tile.post.type=='img'"  style="height: 200px">
+                                        <img ng-src="{{tile.post.data}}" style="width: auto;height: 100%">
+                                    </div>
+                                    <div class="vid" ng-if="tile.post.type=='vid'"  style="height: 200px">
+                                        <iframe ng-src="{{tile.post.data}}" style="width: auto;height: 100%">
+                                        </iframe>
+                                    </div>
+                                </md-card-content>
+                                <md-card-actions layout="row" layout-align="center end">
+                                    <md-button>Partage</md-button>
+                                    <md-button>J'aime</md-button>
+                                    <md-card-icon-actions>
+                                        <md-button class="md-icon-button" aria-label="icon">
+                                            <md-icon style="color:darkred;">favorite</md-icon>
+                                        </md-button>
+                                    </md-card-icon-actions>
+                                </md-card-actions>
+                            </md-card>
                         </div>
-                        <div class="img" ng-if="tile.post.type=='img'"  style="height: 200px">
-                            <img ng-src="{{tile.post.data}}" style="width: auto;height: 100%">
-                        </div>
-                    </md-card-content>
-                    <md-card-actions layout="row" layout-align="center end">
-                        <md-button>Partage</md-button>
-                        <md-button>J'aime</md-button>
-                        <md-card-icon-actions>
-                            <md-button class="md-icon-button" aria-label="icon">
-                                <md-icon style="color:darkred;">favorite</md-icon>
-                            </md-button>
-                        </md-card-icon-actions>
-                    </md-card-actions>
-                </md-card>
-            </div>
-        </md-grid-tile>
-    </md-grid-list>
+                    </md-grid-tile>
+                </md-grid-list>
+            </md-content>
+        </md-tab>
+        <md-tab label="Tour 3D">
+            <md-content style="position: relative; padding-bottom: 44%;padding-top: 25px; height: 0;">
+                <iframe src="https://www.youtube.com/embed/678XGgNv-h4"
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                </iframe>
+            </md-content>
+        </md-tab>
+    </md-tabs>
 </md-content>
