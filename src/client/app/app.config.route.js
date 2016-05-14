@@ -14,13 +14,13 @@
                  controller: 'WallController',
                  controllerAs: 'wvm'
                  })
-                 /*.when('/events', {
+                 .when('/carte', {
                  //templateUrl: baseUrl + 'voyage/voyage.html',
-                 templateUrl: baseUrl + 'event/event.html',
-                 controller: 'EventCtrl',
-                 controllerAs: 'vm'
+                 templateUrl: baseUrl + 'carte/carte.html',
+                 controller: 'CarteController',
+                 controllerAs: 'cvm'
                  })
-                 .when('/map', {
+                 /*.when('/map', {
                  templateUrl: baseUrl + 'map/map.html',
                  controller: 'MapCtrl',
                  controllerAs: 'vm'
