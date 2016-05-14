@@ -35,12 +35,6 @@
                     controller: 'AbbordController',
                     controllerAs: 'vm'
                 })
-                 /*
-                 .when('/about', {
-                 templateUrl: baseUrl + 'about/about.html',
-                 controller: 'aboutCtrl',
-                 controllerAs: 'vm'
-                 }*/
                 .otherwise({redirectTo: '/acceuil'});
         }]);
 })();
