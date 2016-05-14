@@ -1,0 +1,124 @@
+*,
+*:after,
+*::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body { height: 100%; }
+
+@font-face {
+    font-family: "Variane Script";
+    src: url('../fonts/Variane Script.ttf') format('truetype');
+}
+
+.animation {
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    -webkit-perspective:2000px;
+    -moz-perspective:2000px;
+    -o-perspective: 2000px;
+    perspective: 2000px;
+}
+
+.cube {
+    background: #C2C2C2;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /*top: 0;
+    left: 0;*/
+    right: 0;
+    top:0;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+
+
+/*****************************************************/
+/*.pt-perspective {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    -webkit-perspective: 1200px;
+    -moz-perspective: 1200px;
+    perspective: 1200px;
+}*/
+
+/*.pt-page {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+}*/
+
+
+.nav-header {
+    background-color: #447d91;
+    background: linear-gradient(#447d91, #63386c);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #447d91), color-stop(1, #63386c));
+    background: -webkit-linear-gradient(top, #447d91 0%, #63386c 100%);
+    background: -moz-linear-gradient(top, #447d91 0%, #63386c 100%);
+    background: linear-gradient(top, #447d91 0%, #63386c 100%);
+    flex-shrink: 0;
+    z-index: 2;
+    padding:1em;
+}
+
+a.docs-logo {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    border-bottom: none;
+    text-decoration: none;
+    color: lightskyblue;
+}
+
+.docs-logotype {
+    text-align: center;
+    font-weight: 400;
+    font-size: 32px;
+    margin: 0.3em 0 0 0;
+}
+
+md-icon{
+    width:auto !important;
+}
+
+.site-sidenav,
+.site-sidenav.md-locked-open-add-active,
+.site-sidenav.md-locked-open {
+    width: 272px;
+    min-width: 272px;
+    max-width: 272px;
+}
+.menu-item, .menu-item md-icon{
+    color:#447d91;
+}
+.menu-item:hover,.menu-item:hover md-icon{
+    color:#63386c;
+}
+.menu-item-alert, .menu-item-alert md-icon{
+    color:#D73935;
+}
+.menu-item-alert:hover, .menu-item-alert:hover md-icon{
+    color:#960200;
+}

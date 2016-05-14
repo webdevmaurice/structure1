@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="teleportation">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="client/lib/weblibs.min.css"/>
+    <link rel="stylesheet" type="text/css" href="client/assets/userstyles.min.css"/>
+    <link rel="stylesheet" type="text/css" href="client/app/app.css" />
+    <!--[if lt IE 9]>
+    <script src="client/lib/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+
+<body layout="row" flex>
+    <md-sidenav
+            md-component-id="left"
+            md-is-locked-open="$mdMedia('gt-sm')"
+            md-whiteframe="12"
+            layout="column">
+        <header>
+            <a href="">
+                <md-icon style="font-size:100px; color:#2196F3;">directions_boat</md-icon>
+                <h1>SeaSafe</h1>
+            </a>
+        </header>
+        <!--md-toolbar>
+            <h1>Sidenav Right / Toolbar</h1>
+        </md-toolbar-->
+        <md-list>
+            <md-list-item ng-click="navigateTo('data usage', $event)">
+                <md-icon style="color:#FF5722;">warning</md-icon>
+                <p>Alerter</p>
+            </md-list-item>
+        </md-list>
+        <md-list>
+            <md-list-item ng-click="navigateTo('data usage', $event)">
+                <md-icon style="color:#673AB7;">public</md-icon>
+                <p>Géolocalisation</p>
+            </md-list-item>
+        </md-list>
+        <md-list>
+            <md-list-item ng-click="navigateTo('data usage', $event)">
+                <md-icon style="color:#795548;">people</md-icon>
+                <p>Gestion d'equipe</p>
+            </md-list-item>
+        </md-list>
+        <md-list>
+            <md-list-item ng-click="navigateTo('data usage', $event)">
+                <md-icon style="color:#009688;">details</md-icon>
+                <p>En savoire plus</p>
+            </md-list-item>
+        </md-list>
+    </md-sidenav>
+    <div layout="column" flex>
+        <md-toolbar>
+            <h5>SeaSafe App / Bread Crumbs here</h5>
+        </md-toolbar>
+        <md-content>
+            Map Here
+        </md-content>
+    </div>
+    <script type="text/javascript" src="client/lib/weblibs.min.js"></script>
+    <script type="text/javascript" src="client/app/app.js"></script>
+</body>
+</html>
