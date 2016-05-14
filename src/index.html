@@ -182,7 +182,8 @@
                 <md-button
                         ng-href="#/acceuil">
                     <md-icon
-                            class="md-light md-48 mdi mdi-apps">
+                            class="md-light md-48 mdi mdi-apps"
+                            ng-class="rvm.getClass('/acceuil')">
                     </md-icon>
                     <md-tooltip
                             md-direction="right"
@@ -195,7 +196,8 @@
                 <md-button
                         ng-href="#/wall">
                     <md-icon
-                            class="md-light md-48">
+                            class="md-light md-48"
+                            ng-class="rvm.getClass('/wall')">
                         dashboard
                     </md-icon>
                     <md-tooltip
@@ -209,7 +211,8 @@
                 <md-button
                         ng-href="#/carte">
                     <md-icon
-                            class="md-light md-48">
+                            class="md-light md-48"
+                            ng-class="rvm.getClass('/carte')">
                         public
                     </md-icon>
                     <md-tooltip
@@ -223,7 +226,8 @@
                 <md-button
                         ng-href="#/info">
                     <md-icon
-                            class="md-light md-48">
+                            class="md-light md-48"
+                            ng-class="rvm.getClass('/info')">
                         info
                     </md-icon>
                     <md-tooltip

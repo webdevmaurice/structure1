@@ -172,3 +172,7 @@
     text-align: center;
     font-size: 0px;
 }
+
+.bt-menu > ul:first-of-type > li > a > md-icon.menu-active{
+    color:lime;
+}
