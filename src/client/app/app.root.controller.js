@@ -8,5 +8,13 @@
             rvm.getClass = function(path) {
                 return ($location.path().substr(0, path.length) === path) ? 'menu-active' : '';
             };
+            rvm.isFirefox = navigator.userAgent.indexOf("Firefox") != -1;
+            rvm.toggleSidenav = function(){
+                $mdSidenav('left').toggle();
+            }
+
+            rvm.navigateTo = function(view) {
+                $location.path(view);
+            }
         }]);
 })();

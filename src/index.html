@@ -137,7 +137,7 @@
     </script>
 </head>
 
-<body layout="row" style="overflow: hidden;" flex>
+<body style="overflow: hidden;">
 <script>
     window.fbAsyncInit = function() {
         FB.init({
@@ -163,7 +163,62 @@
     js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.6&appId=1569456083347861";
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-    <nav id="bt-menu"
+
+    <div ng-if="rvm.isFirefox" layout="row" flex>
+        <md-sidenav
+                class="site-sidenav"
+                md-component-id="left"
+                md-is-locked-open="$mdMedia('gt-sm')"
+                md-whiteframe="8"
+                layout="column">
+            <header class="nav-header" ng-click="rvm.navigateTo('acceuil')">
+                <a href="" class="docs-logo">
+                    <md-icon class="mdi mdi-rocket" style="font-size:100px; color:lightcoral;"></md-icon>
+                </a>
+            </header>
+            <md-list flex
+                     style="background: linear-gradient(to bottom, #e5fcc2 55%,#d3f89c 100%);">
+                <md-list-item class="menu-item" ng-click="rvm.navigateTo('acceuil', $event)">
+                    <md-icon class="md-36  mdi mdi-apps"></md-icon>
+                    <p>Acceuil</p>
+                    <md-divider></md-divider>
+                </md-list-item>
+                <md-list-item class="menu-item" ng-click="rvm.navigateTo('wall', $event)">
+                    <md-icon class="md-36">dashboard</md-icon>
+                    <p>Partage</p>
+                    <md-divider></md-divider>
+                </md-list-item>
+                <md-list-item class="menu-item" ng-click="rvm.navigateTo('carte', $event)">
+                    <md-icon class="md-36">public</md-icon>
+                    <p>Carte</p>
+                    <md-divider></md-divider>
+                </md-list-item>
+                <md-list-item class="menu-item" ng-click="rvm.navigateTo('info', $event)">
+                    <md-icon class="md-36">info</md-icon>
+                    <p>Savoir Plus</p>
+                    <md-divider></md-divider>
+                </md-list-item>
+                <md-list-item class="menu-item-alert" ng-click="rvm.navigateTo('abbord', $event)">
+                    <md-icon class="md-36">live_tv</md-icon>
+                    <p>En directe</p>
+                    <md-divider></md-divider>
+                </md-list-item>
+            </md-list>
+        </md-sidenav>
+        <div layout="column" flex>
+            <md-button hide-gt-sm ng-click="rvm.toggleSidenav()">
+                <md-icon>menu</md-icon>
+            </md-button>
+            <div  class="animation outer-box">
+                <div ng-view
+                     class="cube {{vm.pageClass}}">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav ng-if="!rvm.isFirefox"
+         id="bt-menu"
          class="bt-menu"
          ng-class="nav.menuIcon == 'menu' ? 'bt-menu-close' : 'bt-menu-open'"
          ng-controller="navCtrl as nav"
@@ -257,10 +312,10 @@
         <ul>
             <li>
                 <div
-                        class="fb-like"
-                        data-share="true"
-                        data-width="450"
-                        data-show-faces="true">
+                    class="fb-like"
+                    data-share="true"
+                    data-width="450"
+                    data-show-faces="true">
                 </div>
             </li>
             <li>
