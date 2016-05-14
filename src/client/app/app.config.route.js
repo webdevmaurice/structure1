@@ -24,7 +24,13 @@
                  templateUrl: baseUrl + 'info/info.html',
                  controller: 'infoController',
                  controllerAs: 'vm'
-                 })/*
+                 })
+                .when('/trajet', {
+                    templateUrl: baseUrl + 'trajet/trajet.html',
+                    controller: 'trajetController',
+                    controllerAs: 'vm'
+                })
+                 /*
                  .when('/about', {
                  templateUrl: baseUrl + 'about/about.html',
                  controller: 'aboutCtrl',
