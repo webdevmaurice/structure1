@@ -1,0 +1,415 @@
+/*** hover ***/
+.view {
+    width: 300px;
+    height: 200px;
+    margin: 10px;
+    float: left;
+    border: 10px solid #fff;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    box-shadow: 1px 1px 2px #e6e6e6;
+    cursor: default;
+    background: #fff url('images/bgimg.jpg') no-repeat center center
+}
+.view .mask, .view .content {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0
+}
+.view img {
+    display: block;
+    position: relative
+}
+.view h2 {
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    font-size: 17px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    margin: 20px 0 0 0
+}
+.view p {
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 12px;
+    position: relative;
+    color: #fff;
+    padding: 10px 20px 20px;
+    text-align: center
+}
+.view a.info {
+    display: inline-block;
+    text-decoration: none;
+    padding: 7px 14px;
+    background: #000;
+    color: #fff;
+    text-transform: uppercase;
+    box-shadow: 0 0 1px #000
+}
+.view a.info:hover {
+    box-shadow: 0 0 5px #000
+}
+
+.view-first img {
+    transition: all 0.2s linear;
+}
+.view-first .mask {
+    opacity: 0;
+    background-color: rgba(219,127,8, 0.7);
+    transition: all 0.4s ease-in-out;
+}
+.view-first h2 {
+    transform: translateY(-100px);
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+}
+.view-first p {
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.2s linear;
+}
+.view-first a.info{
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+
+.view-first:hover img {
+    transform: scale(1.1);
+}
+.view-first:hover .mask {
+    opacity: 1;
+}
+.view-first:hover h2,
+.view-first:hover p,
+.view-first:hover a.info {
+    opacity: 1;
+    transform: translateY(0px);
+}
+.view-first:hover p {
+    transition-delay: 0.1s;
+}
+.view-first:hover a.info {
+    transition-delay: 0.2s;
+}
+.view-second img {
+    transition: all 0.2s ease-in;
+}
+.view-second .mask {
+    background-color: rgba(115,146,184, 0.7);
+    width: 300px;
+    padding: 60px;
+    height: 300px;
+    opacity: 0;
+    transform: translate(265px, 145px) rotate(45deg);
+    transition: all 0.2s ease-in-out;
+}
+.view-second h2 {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    background: transparent;
+    margin: 20px 40px 0px 40px;
+    transform: translate(200px, -200px);
+    transition: all 0.2s ease-in-out;
+}
+.view-second p {
+    transform: translate(-200px, 200px);
+    transition: all 0.2s ease-in-out;
+}
+.view-second a.info {
+    transform: translate(0px, 100px);
+    transition: all 0.2s 0.1s ease-in-out;
+}
+.view-second:hover .mask {
+    opacity:1;
+    transform: translate(-80px, -125px) rotate(45deg);
+}
+.view-second:hover h2 {
+    transform: translate(0px,0px);
+    transition-delay: 0.3s;
+}
+.view-second:hover p {
+    transform: translate(0px,0px);
+    transition-delay: 0.4s;
+}
+.view-second:hover a.info {
+    transform: translate(0px,0px);
+    transition-delay: 0.5s;
+}
+/***end hover***/
+
+/****rocket***/
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(124, 183, 172, 1.0);
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+h1, p {
+    width: 30%;
+    margin-left: 5%;
+    float: left;
+    clear: right;
+}
+
+.spaceship {
+    float: left;
+    position: relative;
+    margin-top: 30px;
+    margin-left: 30%;
+    top: 0px;
+    left: 0px;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(248, 239, 190, 1.0);
+    border: 5px solid rgba(129, 30, 14, 1.0);
+    border-radius: 100px;
+    box-shadow: 9px -9px 0px -3px rgba(205, 179, 68, 1.0) inset;
+}
+.spaceship:active {
+    -webkit-animation: blast-off 5s;
+    -moz-animation: blast-off 5s;
+    -ms-animation: blast-off 5s;
+    -o-animation: blast-off 5s;
+}
+.spaceship:before,
+.spaceship:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 26px;
+    background-color: rgba(129, 30, 14, 1.0);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border-top-left-radius: 20px 50px;
+    border-top-right-radius: 20px 50px;
+    border-bottom-left-radius: 10px 2px;
+    border-bottom-right-radius: 10px 2px;
+    z-index: -1;
+}
+.spaceship:before {
+    top: 0px;
+    left: 0px;
+    box-shadow: 2px 0px rgba(129, 30, 14, 1.0) inset,
+    0px 4px rgba(129, 30, 14, 1.0) inset,
+    0px -3px rgba(129, 30, 14, 1.0) inset,
+    4px 0px 0px rgba(250, 106, 62, 1.0) inset,
+    95px 0px rgba(129, 30, 14, 1.0);
+    z-index: -2;
+}
+.spaceship:after {
+    top: 39px;
+    left: 29px;
+    box-shadow: 2px 0px rgba(129, 30, 14, 1.0) inset,
+    0px 4px rgba(129, 30, 14, 1.0) inset,
+    0px -2px rgba(129, 30, 14, 1.0) inset,
+    6px 0px rgba(250, 106, 62, 1.0) inset;
+    z-index: 1;
+}
+
+.flames,
+.flames:before {
+    position: absolute;
+    width: 14px;
+    height: 100px;
+    background-color: rgba(205, 179, 68, 1.0);
+    border-bottom-left-radius: 	7px 90px;
+    border-bottom-right-radius: 7px 90px;
+    box-shadow: 0px -30px 0px 5px rgba(248, 239, 190, 1.0) inset;
+}
+.flames {
+    top: 8px;
+    left: -41px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    z-index: -2;
+}
+.flames:before {
+    content: '';
+    top: 0px;
+    left: 94px;
+}
+
+.flames-2 {
+    position: absolute;
+    top: 41px; left: -22px;
+    height: 130px;
+    width: 14px;
+    border-bottom-left-radius: 	40px 500px;
+    border-bottom-right-radius: 40px 500px;
+    background-color: rgba(205, 179, 68, 1.0);
+    border: 5px solid rgba(248, 239, 190, 1.0);
+    border-top: none;
+    border-bottom: 40px solid rgba(248, 239, 190, 1.0);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.flames-2:before {
+    content: '';
+    position: absolute;
+    top: -13px;
+    left: -34px;
+    width: 7px;
+    height: 7px;
+    background-color: rgba(129, 30, 14, 1.0);
+    border-radius: 7px;
+    box-shadow: 11px 10px 0px 0px rgba(129, 30, 14, 1.0),
+    54px 10px rgba(129, 30, 14, 1.0),
+    64px 0px rgba(129, 30, 14, 1.0);
+}
+
+@-webkit-keyframes blast-off {
+    0%, 100% { top: 0px; left: 0px; 	}
+    1% 	{ top: 2px; left: 2px; 				}
+    2% 	{ top: -2px; left: 2px; 			}
+    3% 	{ top: 4px; left: -2px; 			}
+    4% 	{ top: 4px; left: 0px; 				}
+    5% 	{ top: -3px; left: -2px; 			}
+    6% 	{ top: 4px; left: 5px; 				}
+    7% 	{ top: -4px; left: 7px; 			}
+    8% 	{ top: 5px; left: -8px; 			}
+    9% 	{ top: -4px; left: 6px; 			}
+    10% { top: 3px; left: -9px; 			}
+    11% { top: 9px; left: -5px; 			}
+    12% { top: 2px; left: 5px; 				}
+    99% { top: -9999px; left: 9999px; }
+}
+@-moz-keyframes blast-off {
+    0%, 100% { top: 0px; left: 0px; 	}
+    1% 	{ top: 2px; left: 2px; 				}
+    2% 	{ top: -2px; left: 2px; 			}
+    3% 	{ top: 4px; left: -2px; 			}
+    4% 	{ top: 4px; left: 0px; 				}
+    5% 	{ top: -3px; left: -2px; 			}
+    6% 	{ top: 4px; left: 5px; 				}
+    7% 	{ top: -4px; left: 7px; 			}
+    8% 	{ top: 5px; left: -8px; 			}
+    9% 	{ top: -4px; left: 6px; 			}
+    10% { top: 3px; left: -9px; 			}
+    11% { top: 9px; left: -5px; 			}
+    12% { top: 2px; left: 5px; 				}
+    99% { top: -9999px; left: 9999px; }
+}
+@-ms-keyframes blast-off {
+    0%, 100% { top: 0px; left: 0px; 	}
+    1% 	{ top: 2px; left: 2px; 				}
+    2% 	{ top: -2px; left: 2px; 			}
+    3% 	{ top: 4px; left: -2px; 			}
+    4% 	{ top: 4px; left: 0px; 				}
+    5% 	{ top: -3px; left: -2px; 			}
+    6% 	{ top: 4px; left: 5px; 				}
+    7% 	{ top: -4px; left: 7px; 			}
+    8% 	{ top: 5px; left: -8px; 			}
+    9% 	{ top: -4px; left: 6px; 			}
+    10% { top: 3px; left: -9px; 			}
+    11% { top: 9px; left: -5px; 			}
+    12% { top: 2px; left: 5px; 				}
+    99% { top: -9999px; left: 9999px; }
+}
+@-o-keyframes blast-off {
+    0%, 100% { top: 0px; left: 0px; 	}
+    1% 	{ top: 2px; left: 2px; 				}
+    2% 	{ top: -2px; left: 2px; 			}
+    3% 	{ top: 4px; left: -2px; 			}
+    4% 	{ top: 4px; left: 0px; 				}
+    5% 	{ top: -3px; left: -2px; 			}
+    6% 	{ top: 4px; left: 5px; 				}
+    7% 	{ top: -4px; left: 7px; 			}
+    8% 	{ top: 5px; left: -8px; 			}
+    9% 	{ top: -4px; left: 6px; 			}
+    10% { top: 3px; left: -9px; 			}
+    11% { top: 9px; left: -5px; 			}
+    12% { top: 2px; left: 5px; 				}
+    99% { top: -9999px; left: 9999px; }
+}
+/***end**/
+
+#target{
+ float: right;
+}
+#homeTitle{
+    background:#FFFFFF;
+    opacity: 0.7;
+    height: 100%;
+    color: #0a3b64;
+    font-family: Lucida Console;
+    font-size: 6em;
+    font-weight: bold;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    padding: 2%;
+    width: 55%;
+    text-align: center;
+    top: 0;
+    z-index: 6;
+}
+
+#homep {
+    position:relative;
+    background:url("../img/space7.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    overflow:hidden;
+
+
+}
+
+#earth {
+    background-image: url('../img/astro.png');
+    background-repeat: no-repeat;
+    width: 320px;
+    height: 354px;
+    /* a black shadow from left and white from right */
+
+    position: relative;
+    z-index: 5;
+    animation-name: move,scale,rotate;
+    animation-duration: 10s,10s,10s;
+    animation-iteration-count: infinite,infinite,infinite;
+    -webkit-animation-timing-function: ease-in-out,linear,linear;
+}
+
+@keyframes move {
+    0%   { left: 200px;  }
+    70%  { left: -200px; }
+    100% { left: 200px;  }
+}
+
+@keyframes scale {
+    0%  { transform: scale(1);   }
+    32% { transform: scale(0.4); animation-timing-function:  ease-in; }
+    70% { transform: scale(1); animation-timing-function:  ease-in;  }
+    75% { transform: scale(1.2);  animation-timing-function:  ease-in-out; }
+    86% { transform: scale(2);  }
+    98% { transform: scale(1.2); }
+    100%{ transform: scale(1); }
+}
+

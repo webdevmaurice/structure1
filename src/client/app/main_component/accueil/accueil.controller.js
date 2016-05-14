@@ -7,5 +7,7 @@
             var avm = this;
             console.info('AccueilController');
         }]);
+
+ 
 })();
 
