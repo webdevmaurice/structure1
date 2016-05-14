@@ -1,4 +1,17 @@
 <div id="test">
+    <style>
+        table, th , td  {
+            border: 1px solid grey;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+        table tr:nth-child(odd)	{
+            background-color: #f1f1f1;
+        }
+        table tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+    </style>
     <div id="yourdiv" class="col-md-12">
         <ol>
             <li>
@@ -54,6 +67,21 @@
             <li>
                 <h2><span>Sécurité</span></h2>
                 <div>HGSAH</div>
+            </li>
+            <li>
+                <h2><span>Pression atmosphérique</span></h2>
+                <div class="container">
+                    <div style="align-content: center;text-align: center;font-size: xx-large">Donnée en temp réel</div>
+                    <div class="col-md-1 col-offset-6 centered">
+                        <table>
+                            <tr ng-repeat="x in vm.data">
+                                <td>{{ $index + 1 }}</td>
+                                <td>{{ vm.noms[$index] }}</td>
+                                <td>{{ x }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
             </li>
         </ol>
     </div>
