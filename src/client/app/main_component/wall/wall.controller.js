@@ -12,7 +12,7 @@
                 title: "Svg-",
                 background: ""
             });*/
-
+            wvm.filtre = "";
             wvm.postTemplate = {
                 poster: "Saif Sohomow",
                 timestamp: new Date(),
@@ -31,16 +31,51 @@
             };
 
             var palettes = [
-                ['#ff8080', '#ff6666', '#ff4d4d', '#ff3333', '#ff1a1a', 'red', '#e60000', '#cc0000', '#b30000', '#990000'],
-                ['#664200','#805300','#996300','#b37300','#cc8400','#e69500','#ffae1a','#ffb733','#ffc04d','#ffc966'],
-                ['#00ff00', '#00e600', '#00cc00', '#00b300', '#009900', 'green', '#006600', '#004d00', '#003300', '#001a00'],
-                ['#ff00ff', '#e600e6', '#cc00cc', '#b300b3', '#990099', 'purple', '#660066', '#4d004d', '#330033','#1a001a']
+                [
+                    ['#a657c2','#9c45bb','#8d3da9','#7d3796','#6e3084','#5E2971','#4e225e','#3f1b4c','#2f1539','#200e26'],
+                    ['#9421bd','#831da7','#721991','#61167b','#501266','#3F0E50','#2e0a3a','#1d0625','#0c030f','#000000']
+                ],
+                [
+                    ['#d8ab8b','#d29e77','#cb9064','#c58251','#bd753f','#AA6939','#975d33','#84512c','#714626','#5e3a1f'],
+                    ['#e17728','#d16a1e','#bb5f1a','#a55417','#8e4814','#783D11','#62320e','#4b260b','#351b08','#1f1004']
+                ],
+                [
+                    ['#4bc2b6','#3eb6aa','#37a398','#319087','#2a7d75','#246A63','#1e5751','#17443f','#11312e','#0a1e1c'],
+                    ['#1bbaa9','#18a495','#158e80','#12776c','#0e6158','#0B4B44','#083530','#041f1c','#010808','#000000']
+                ],
+                [
+                    ['#d2d789','#cbd176','#c4ca63','#bcc450','#b3bb3f','#A1A839','#8f9533','#7c822c','#6a6f26','#585c1f']
+                    ['#d4df2a','#c5d01f','#b0b91c','#9ba319','#868d15','#717712','#5c610f','#474b0b','#323508','#1d1e05']
+                ]
+            ];
+            var textsPosts = [
+                "Hello from the other side",
+                "WSS apelle la terre",
+                "Alo? Il y'a quelqu'un?",
+                "La terre est belle",
+                "Just got up, and having a coffee",
+                "Earth is so beautiful",
+                "Oops :3",
+                "I forgot my breathing mask. but first let me take a selfie",
+                "Were those aliens? o.O",
+                "Connection is slow here"
+            ];
+
+            var imgPosts = [
+                "moon-from-earth.png",
+                "astro1.jpg",
+                "astro2.jpg",
+                "astro3.jpg",
+                "astro4.jpg",
+                "ss1.jpg",
+                "ss2.jpg",
+                "ss3.jpg"
             ];
             wvm.posts = buildGridModel(wvm.postTemplate);
 
             function buildGridModel(tileTmpl){
                 var it, results = [];
-                for (var j=0; j<50; j++) {
+                for (var j=0; j<25; j++) {
                     it = angular.merge({},tileTmpl);
 
                     it.icon  = it.icon + (j+1);
@@ -49,7 +84,9 @@
                     it.post.type = Math.floor((Math.random() * 3) + 1);
                     it.poster = Math.floor((Math.random() * 3));
                     var palette = palettes[it.poster];
-                    it.color = palette[Math.floor((Math.random() * 9))];
+                    it.quotient = Math.floor((Math.random() * 9));
+                    it.fromColor = palette[0][it.quotient];
+                    it.toColor = palette[1][it.quotient];
                     it.poster = [
                         "Hashim",
                         "Saif",
@@ -59,39 +96,15 @@
                     if (it.post.type==1) {
                         it.id = 'text' + j;
                         it.post.type = 'text';
-                        it.post.data = 'Hello from the other side';
+                        it.post.data = textsPosts[Math.floor((Math.random() * 9))];
                     } else {
                         it.id = 'img' + j;
                         it.post.type = 'img';
-                        it.post.data = 'client/assets/img/moon-from-earth.png';
+                        it.post.data = 'client/assets/img/' + imgPosts[Math.floor((Math.random() * 6))];
                     }
                     it.likes = Math.floor((Math.random() * 100) + 1);
                     it.comments = Math.floor((Math.random() * 100) + 1);
                     it.shares = Math.floor((Math.random() * 100) + 1);
-                    it.quotient = Math.floor((Math.random() * 9) + 1);
-
-                    /*switch(j+1) {
-                        case 1:
-                            it.background = "red";
-                            it.span.row = it.span.col = 2;
-                            break;
-                        case 2: it.background = "green";         break;
-                        case 3: it.background = "darkBlue";      break;
-                        case 4:
-                            it.background = "blue";
-                            it.span.col = 2;
-                            break;
-                        case 5:
-                            it.background = "yellow";
-                            it.span.row = it.span.col = 2;
-                            break;
-                        case 6: it.background = "pink";          break;
-                        case 7: it.background = "darkBlue";      break;
-                        case 8: it.background = "purple";        break;
-                        case 9: it.background = "deepBlue";      break;
-                        case 10: it.background = "lightPurple";  break;
-                        case 11: it.background = "yellow";       break;
-                    }*/
                     results.push(it);
                 }
                 return results;
