@@ -162,7 +162,31 @@
 </head>
 
 <body layout="row" style="overflow: hidden;" flex>
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '1569456083347861',
+            xfbml      : true,
+            version    : 'v2.6'
+        });
+    };
 
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.6&appId=1569456083347861";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
     <nav id="bt-menu"
          class="bt-menu"
          ng-class="nav.menuIcon == 'menu' ? 'bt-menu-close' : 'bt-menu-open'"
@@ -221,6 +245,7 @@
                         Carte
                     </md-tooltip>
                 </md-button>
+
             </li>
             <li>
                 <md-button
@@ -240,14 +265,14 @@
         </ul>
         <ul>
             <li>
-                <md-button class="md-fab md-mini">
-                    <md-icon style="color:rgb(85,172,238)" md-font-set="mdi" md-font-icon="mdi-twitter"></md-icon>
-                </md-button>
+                <div
+                        class="fb-like"
+                        data-share="true"
+                        data-width="450"
+                        data-show-faces="true">
+                </div>
             </li>
             <li>
-                <md-button class="md-fab md-mini">
-                    <md-icon style="color:rgb(58,87,149)" md-font-set="mdi" md-font-icon="mdi-facebook"></md-icon>
-                </md-button>
             </li>
         </ul>
         <div  class="animation outer-box">
