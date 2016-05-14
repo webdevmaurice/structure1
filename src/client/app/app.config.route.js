@@ -8,11 +8,6 @@
                     controller: 'AccueilController',
                     controllerAs: 'avm'
                 })
-                .when('/geolocalisation',{
-                    templateUrl: baseUrl + 'geolocalisation/geolocalisation.html',
-                    controller: 'GeolocalisationController',
-                    controllerAs: 'gvm'
-                })
                 .when('/wall', {
                  //templateUrl: baseUrl + 'voyage/voyage.html',
                  templateUrl: baseUrl + 'wall/wall.html',

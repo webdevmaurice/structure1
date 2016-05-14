@@ -112,7 +112,6 @@
     <script type="text/javascript" src="client/app/app.root.controller.js"></script>
 
     <script type="text/javascript" src="client/app/main_component/accueil/accueil.controller.js"></script>
-    <script type="text/javascript" src="client/app/main_component/geolocalisation/geolocalisation.controller.js"></script>
     <script type="text/javascript" src="client/app/main_component/wall/wall.controller.js"></script>
 </head>
 
@@ -139,7 +138,7 @@
                 <p>Wall</p>
                 <md-divider></md-divider>
             </md-list-item>
-            <md-list-item class="menu-item-alert" ng-click="navigateTo('data usage', $event)">
+            <md-list-item class="menu-item-alert" ng-click="rvm.navigateTo('data usage', $event)">
                 <md-icon class="md-36">warning</md-icon>
                 <p>Alerter</p>
                 <md-divider></md-divider>
@@ -149,12 +148,12 @@
                 <p>Géolocalisation</p>
                 <md-divider></md-divider>
             </md-list-item>
-            <md-list-item class="menu-item" ng-click="navigateTo('data usage', $event)">
+            <md-list-item class="menu-item" ng-click="rvm.navigateTo('data usage', $event)">
                 <md-icon class="md-36">people</md-icon>
                 <p>Gestion d'equipe</p>
                 <md-divider></md-divider>
             </md-list-item>
-            <md-list-item class="menu-item" ng-click="navigateTo('data usage', $event)">
+            <md-list-item class="menu-item" ng-click="rvm.navigateTo('data usage', $event)">
                 <md-icon class="md-36">details</md-icon>
                 <p>En savoire plus</p>
                 <md-divider></md-divider>
