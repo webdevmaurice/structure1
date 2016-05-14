@@ -7,6 +7,18 @@
             var cvm = this;
             console.info('CarteController');
 
+            $('#closeCarte').click(function(){
+                $('#overlayCarte').fadeOut();
+                $('#imgs').hide();
+                $('#imgs').children().hide();
+            });
+function openOverlay(){
+    $('#overlayCarte').show();
+    $('#imgs').show();
+    $('#imgs').animate({
+        width: "70%",
+    }, 1500);
+}
             var mauritius = new google.maps.LatLng(-20.3484, 57.5522);
             var australia = new google.maps.LatLng(-25.2744, 133.7751);
             var asia = new google.maps.LatLng(34.0479, 100.6197);
@@ -19,9 +31,9 @@
             function initialize() {
 
                 var mapProp = {
-                    center:new google.maps.LatLng(51.508742,-0.120850),
-                    zoom:3,
-                    mapTypeId:google.maps.MapTypeId.ROADMAP
+                    center:africa,
+                    zoom:1,
+                    mapTypeId:google.maps.MapTypeId.HYBRID
                 };
                 var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
@@ -41,16 +53,21 @@
                 markermauritius.setMap(map);
                 var infoMauritius = new google.maps.InfoWindow({content:"Mauritius"});
                 google.maps.event.addListener(markermauritius, 'click', function() {
-                    infoMauritius.open(map,markermauritius);
+                    //infoMauritius.open(map,markermauritius);
+                    openOverlay()
+                    $('#imgs .mau').show();
                 });
 
                 //australia
                 var markeraustralia=new google.maps.Marker({position:australia,});
                 markeraustralia.setMap(map);
                 var infoAustralia = new google.maps.InfoWindow({content:"Australia"});
-                infoAustralia.open(map,markeraustralia);
-                google.maps.event.addListener(markermauritius, 'click', function() {
-                    infoAustralia.close();
+                //infoAustralia.open(map,markeraustralia);
+                google.maps.event.addListener(markeraustralia, 'click', function() {
+                    //infoAustralia.close();
+                    openOverlay()
+                        $('#imgs .aus').show();
+
                 });
                 //asia
                 var markerasia=new google.maps.Marker({position:asia,zIndex : -100});
@@ -81,6 +98,23 @@
                 markerafrica.setMap(map);
                 var infoAfrica = new google.maps.InfoWindow({content:"africa"});
                 infoAfrica.open(map,markerafrica);
+                var styles = [
+                    {
+                        featureType: "all",
+                        elementType: "labels",
+                        stylers: [
+                            { visibility: "off" }
+                        ]
+                    },{
+                        featureType: "road",
+                        elementType: "geometry",
+                        stylers: [
+                            { lightness: 100 },
+                            { visibility: "off" }
+                        ]
+                    }
+                ]
+                map.setOptions({styles: styles, minZoom: 2});
             }
 
 
