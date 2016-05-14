@@ -20,11 +20,11 @@
                  controller: 'CarteController',
                  controllerAs: 'cvm'
                  })
-                 /*.when('/map', {
-                 templateUrl: baseUrl + 'map/map.html',
-                 controller: 'MapCtrl',
+                 .when('/info', {
+                 templateUrl: baseUrl + 'info/info.html',
+                 controller: 'infoController',
                  controllerAs: 'vm'
-                 })
+                 })/*
                  .when('/about', {
                  templateUrl: baseUrl + 'about/about.html',
                  controller: 'aboutCtrl',

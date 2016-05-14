@@ -19,10 +19,10 @@
     <script type="text/javascript" src="client/lib/bootstrap-3.3.6/js/bootstrap.js"></script>
 
     <!-- Bootstrap Material Design -->
-    <link rel="stylesheet" type="text/css" href="lib/bootstrap-material-design/css/bootstrap-material-design.min.css"/>
+    <!--link rel="stylesheet" type="text/css" href="lib/bootstrap-material-design/css/bootstrap-material-design.min.css"/>
     <link rel="stylesheet" type="text/css" href="lib/bootstrap-material-design/css/ripples.min.css"/>
     <script type="text/javascript" src="lib/bootstrap-material-design/js/material.js"></script>
-    <script type="text/javascript" src="lib/bootstrap-material-design/js/ripples.js"></script>
+    <script type="text/javascript" src="lib/bootstrap-material-design/js/ripples.js"></script-->
 
     <!-- Google's Material Design Icons -->
     <link rel="stylesheet" type="text/css" href="client/lib/material-design-icons/iconfont/material-icons.css"/>
@@ -70,6 +70,7 @@
     <script type="text/javascript" src="client/lib/chart.js/Chart.js"></script>
     <script type="text/javascript" src="client/lib/angular-chart.js/dist/angular-chart.js"></script>
     <link rel="stylesheet" type="text/css" href="client/lib/angular-chart.js/dist/angular-chart.css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
     <!-- Angular Typewrite -->
     <script type="text/javascript" src="client/lib/angular-typewrite/dist/angular-typewrite.js"></script>
@@ -97,11 +98,13 @@
     <!-- SVG Morpheus -->
     <script type="text/javascript" src="client/lib/SVG-Morpheus/compile/unminified/svg-morpheus.js"></script>
 
+
     <!-- Dependence weblibs -->
     <script type="text/javascript" src="client/lib/weblibs.js"></script>
 
     <!-- Local styles -->
     <link rel="stylesheet" type="text/css" href="client/assets/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="client/app/main_component/info/css/liteaccordion.css"/>
     <!--link rel="stylesheet" type="text/css" href="client/assets/css/page_cube_transitions.css"-->
 
     <!-- Angular application scripts -->
@@ -112,6 +115,8 @@
     <script type="text/javascript" src="client/app/app.root.controller.js"></script>
 
     <script type="text/javascript" src="client/app/main_component/accueil/accueil.controller.js"></script>
+    <script type="text/javascript" src="client/app/main_component/info/info.controller.js"></script>
+    <script type="text/javascript" src="client/app/main_component/info/js/liteaccordion.jquery.js"></script>
     <script type="text/javascript" src="client/app/main_component/wall/wall.controller.js"></script>
     <script type="text/javascript" src="client/app/main_component/carte/carte.controller.js"></script>
     <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDCD0Ec5IGlg466m82nKGWpmFpXXcr9O-I"></script>
@@ -168,9 +173,9 @@
                 <p>Géolocalisation</p>
                 <md-divider></md-divider>
             </md-list-item>
-            <md-list-item class="menu-item" ng-click="rvm.navigateTo('data usage', $event)">
+            <md-list-item class="menu-item" ng-click="rvm.navigateTo('info', $event)">
                 <md-icon class="md-36">people</md-icon>
-                <p>Gestion d'equipe</p>
+                <p>Savoir Plus</p>
                 <md-divider></md-divider>
             </md-list-item>
             <md-list-item class="menu-item" ng-click="rvm.navigateTo('data usage', $event)">
