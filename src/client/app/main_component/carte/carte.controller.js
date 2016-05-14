@@ -34,20 +34,24 @@
                     strokeWeight:2
                 });
 
-                flightPath.setMap(map);
+                //flightPath.setMap(map);
 
                 //mauritius
                 var markermauritius=new google.maps.Marker({position:mauritius,});
                 markermauritius.setMap(map);
                 var infoMauritius = new google.maps.InfoWindow({content:"Mauritius"});
-                infoMauritius.open(map,markermauritius);
+                google.maps.event.addListener(markermauritius, 'click', function() {
+                    infoMauritius.open(map,markermauritius);
+                });
 
                 //australia
                 var markeraustralia=new google.maps.Marker({position:australia,});
                 markeraustralia.setMap(map);
                 var infoAustralia = new google.maps.InfoWindow({content:"Australia"});
                 infoAustralia.open(map,markeraustralia);
-
+                google.maps.event.addListener(markermauritius, 'click', function() {
+                    infoAustralia.close();
+                });
                 //asia
                 var markerasia=new google.maps.Marker({position:asia,zIndex : -100});
                 markerasia.setMap(map);
