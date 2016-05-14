@@ -20,14 +20,14 @@
                  controller: 'CarteController',
                  controllerAs: 'cvm'
                  })
-                 .when('/info', {
+                 .when('/info1', {
                  templateUrl: baseUrl + 'info/info.html',
                  controller: 'infoController',
                  controllerAs: 'vm'
                  })
-                .when('/trajet', {
-                    templateUrl: baseUrl + 'trajet/trajet.html',
-                    controller: 'trajetController',
+                .when('/info', {
+                    templateUrl: baseUrl + 'voyage/voyages.html',
+                    controller: 'VoyageCtrl1',
                     controllerAs: 'vm'
                 })
                  /*
