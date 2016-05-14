@@ -1,11 +1,11 @@
-*,
+/**,
 *:after,
 *::before {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-
+*/
 html, body { height: 100%; }
 
 @font-face {
@@ -101,6 +101,7 @@ a.docs-logo {
 
 md-icon{
     width:auto !important;
+    height: auto !important;
 }
 
 .site-sidenav,
@@ -122,3 +123,24 @@ md-icon{
 .menu-item-alert:hover, .menu-item-alert:hover md-icon{
     color:#960200;
 }
+
+.gridListdemoDynamicTiles .gray {
+    background: #f5f5f5; }
+.gridListdemoDynamicTiles .green {
+    background: #b9f6ca; }
+.gridListdemoDynamicTiles .yellow {
+    background: #ffff8d; }
+.gridListdemoDynamicTiles .blue {
+    background: #84ffff; }
+.gridListdemoDynamicTiles .darkBlue {
+    background: #80d8ff; }
+.gridListdemoDynamicTiles .deepBlue {
+    background: #448aff; }
+.gridListdemoDynamicTiles .purple {
+    background: #b388ff; }
+.gridListdemoDynamicTiles .lightPurple {
+    background: #8c9eff; }
+.gridListdemoDynamicTiles .red {
+    background: #ff8a80; }
+.gridListdemoDynamicTiles .pink {
+    background: #ff80ab; }
