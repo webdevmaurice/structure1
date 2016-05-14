@@ -130,6 +130,11 @@
     <script type="text/javascript" src="client/app/main_component/info/js/jquery.slicebox.js"></script>
     <script type="text/javascript" src="client/app/main_component/wall/wall.controller.js"></script>
     <script type="text/javascript" src="client/app/main_component/carte/carte.controller.js"></script>
+
+    <!-- Navigation -->
+    <link rel="stylesheet" type="text/css" href="client/app/shared_component/nav/nav.css"/>
+    <script type="text/javascript" src="client/app/shared_component/nav/navCtrl.js"></script>
+
     <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDCD0Ec5IGlg466m82nKGWpmFpXXcr9O-I"></script>
     <!-- Voyage-->
     <script type="text/javascript" src="client/app/main_component/voyage/VoyageCtrl.js"></script>
@@ -155,61 +160,110 @@
 </head>
 
 <body layout="row" flex>
-    <md-sidenav
-            class="site-sidenav"
-            md-component-id="left"
-            md-is-locked-open="$mdMedia('gt-sm')"
-            md-whiteframe="8"
-            layout="column">
-        <header class="nav-header" ng-click="rvm.navigateTo('acceuil')">
-            <a href="" class="docs-logo">
-                    <md-icon style="font-size:100px; color:#e5fcc2;">directions_boat</md-icon>
-                <h1 class="docs-logotype md-heading" style="font-family: 'Variane Script';">SeaSafe</h1>
-            </a>
-        </header>
-        <!--md-toolbar>
-            <h1>Sidenav Right / Toolbar</h1>
-        </md-toolbar-->
-        <md-list flex
-            style="background: linear-gradient(to bottom, #e5fcc2 55%,#d3f89c 100%);">
-            <md-list-item class="menu-item" ng-click="rvm.navigateTo('wall', $event)">
-                <md-icon class="md-36">dashboard</md-icon>
-                <p>Wall</p>
-                <md-divider></md-divider>
-            </md-list-item>
-            <md-list-item class="menu-item" ng-click="rvm.navigateTo('carte', $event)">
-                <md-icon class="md-36">public</md-icon>
-                <p>Carte</p>
-                <md-divider></md-divider>
-            </md-list-item>
-            <md-list-item class="menu-item-alert" ng-click="rvm.navigateTo('data usage', $event)">
-                <md-icon class="md-36">warning</md-icon>
-                <p>Alerter</p>
-                <md-divider></md-divider>
-            </md-list-item>
-            <md-list-item class="menu-item" ng-click="rvm.navigateTo('geolocalisation')">
-                <md-icon class="md-36">public</md-icon>
-                <p>Géolocalisation</p>
-                <md-divider></md-divider>
-            </md-list-item>
-            <md-list-item class="menu-item" ng-click="rvm.navigateTo('info', $event)">
-                <md-icon class="md-36">people</md-icon>
-                <p>Savoir Plus</p>
-                <md-divider></md-divider>
-            </md-list-item>
-            <md-list-item class="menu-item" ng-click="rvm.navigateTo('trajet', $event)">
-                <md-icon class="md-36">details</md-icon>
-                <p>24 Heures en espace</p>
-                <md-divider></md-divider>
-            </md-list-item>
-        </md-list>
-    </md-sidenav>
-    <div layout="column" flex>
-        <md-button hide-gt-sm ng-click="rvm.toggleSidenav()">
-            <md-icon>menu</md-icon>
+
+    <nav id="bt-menu"
+         class="bt-menu"
+         ng-class="nav.menuIcon == 'menu' ? 'bt-menu-close' : 'bt-menu-open'"
+         ng-controller="navCtrl as nav"
+         ng-click="nav.closeMenu($event)">
+        <md-button
+                aria-label
+                class="bt-menu-trigger"
+                ng-click="nav.toggleMenu($event)">
+            <ng-md-icon
+                    icon="{{nav.menuIcon}}"
+                    options='{"duration": 500, "rotation": "none"}'>
+            </ng-md-icon>
         </md-button>
-        <md-content ng-view>
-        </md-content>
-    </div>
+        <ul>
+            <li>
+                <md-button
+                        ng-href="#/acceuil">
+                    <md-icon
+                            class="md-light md-48">
+                        dashboard
+                    </md-icon>
+                    <md-tooltip
+                            md-direction="right"
+                            md-delay="144">
+                        Acceuil
+                    </md-tooltip>
+                </md-button>
+            </li>
+            <li>
+                <md-button
+                        ng-href="#/wall">
+                    <md-icon
+                            class="md-light md-48">
+                        account_box
+                    </md-icon>
+                    <md-tooltip
+                            md-direction="right"
+                            md-delay="144">
+                        Wall
+                    </md-tooltip>
+                </md-button>
+            </li>
+            <li>
+                <md-button
+                        ng-href="#/carte">
+                    <md-icon
+                            class="md-light md-48">
+                        card_travel
+                    </md-icon>
+                    <md-tooltip
+                            md-direction="right"
+                            md-delay="144">
+                        Info techniques
+                    </md-tooltip>
+                </md-button>
+            </li>
+            <li>
+                <md-button
+                        ng-href="#/info">
+                    <md-icon
+                            class="md-light md-48">
+                        public
+                    </md-icon>
+                    <md-tooltip
+                            md-direction="right"
+                            md-delay="144">
+                        Savoir Plus
+                    </md-tooltip>
+                </md-button>
+            </li>
+            <li>
+                <md-button
+                        ng-href="#/trajet">
+                    <md-icon
+                            class="md-light md-48">
+                        info
+                    </md-icon>
+                    <md-tooltip
+                            md-direction="right"
+                            md-delay="144">
+                        24 Heures en espace
+                    </md-tooltip>
+                </md-button>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <md-button class="md-fab md-mini">
+                    <md-icon style="color:rgb(85,172,238)" md-font-set="mdi" md-font-icon="mdi-twitter"></md-icon>
+                </md-button>
+            </li>
+            <li>
+                <md-button class="md-fab md-mini">
+                    <md-icon style="color:rgb(58,87,149)" md-font-set="mdi" md-font-icon="mdi-facebook"></md-icon>
+                </md-button>
+            </li>
+        </ul>
+        <div  class="animation outer-box">
+            <div ng-view
+                 class="cube {{vm.pageClass}}">
+            </div>
+        </div>
+    </nav>
 </body>
 </html>
