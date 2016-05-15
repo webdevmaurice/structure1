@@ -20,9 +20,9 @@
                  controller: 'CarteController',
                  controllerAs: 'cvm'
                  })
-                 .when('/info1', {
-                 templateUrl: baseUrl + 'info/info.html',
-                 controller: 'infoController',
+                 .when('/about', {
+                 templateUrl: baseUrl + 'about/about.html',
+                 controller: 'aboutController',
                  controllerAs: 'vm'
                  })
                 .when('/info', {
