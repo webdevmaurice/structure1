@@ -7,7 +7,7 @@
                     </header>
                     <div style="padding-left: 75%"></div>
                     <div class="intro-content" >
-                        <div class="profile"><img src="client/app/main_component/voyage/img/icon_Human.png" alt="profile1"></div>
+                        <div class="profile"><img src="client/app/main_component/voyage/img/wasa.png" alt="profile1"></div>
                         <h1><span>Info WEBYOU 2 </span></h1>
                     </div>
                     <div class="overlay"></div>
@@ -15,7 +15,7 @@
                 <div class="side side-right">
                     <div style="padding-right: 75%"></div>
                     <div class="intro-content">
-                        <div class="profile"><img src="client/app/main_component/voyage/img/parcel.png" alt="profile2"></div>
+                        <div class="profile"><img src="client/app/main_component/voyage/img/meca.jpg" alt="profile2"></div>
                         <h1><span>Parametres temps réel </span></h1>
                     </div>
                     <div class="overlay"></div>
@@ -41,7 +41,7 @@
                             <div class="ss-right">
                                 <h3>
                                     <span>{{line.title_descript}}</span>
-                                    <a href="#">{{line.descrip}}</a>
+                                    <span style="font-size: large">{{line.descrip}}</span>
                                 </h3>
                             </div>
                         </div>
@@ -49,7 +49,7 @@
                             <div class="ss-left">
                                 <h3>
                                     <span>{{line.title_descript}}</span>
-                                    <a href="#">{{line.descrip}}</a>
+                                    <span style="font-size: large">{{line.descrip}}</span>
                                 </h3>
                             </div>
                             <div class="ss-right">{{line.title_img}}
@@ -69,7 +69,7 @@
                             <div class="ss-right">
                                 <h3>
                                     <span>{{line.title_descript}}</span>
-                                    <a href="#">{{line.descrip}}</a>
+                                    <span style="font-size: large">{{line.descrip}}</span>
                                 </h3>
                             </div>
                         </div>
@@ -77,7 +77,7 @@
                             <div class="ss-left">
                                 <h3>
                                     <span>{{line.title_descript}}</span>
-                                    <a href="#">{{line.descrip}}</a>
+                                    <span style="font-size: large">{{line.descrip}}</span>
                                 </h3>
                             </div>
                             <div class="ss-right">{{line.title_img}}
@@ -97,7 +97,7 @@
                             <div class="ss-right">
                                 <h3>
                                     <span>{{line.title_descript}}</span>
-                                    <a href="#">{{line.descrip}}</a>
+                                    <span style="font-size: large">{{line.descrip}}</span>
                                 </h3>
                             </div>
                         </div>
@@ -105,7 +105,7 @@
                             <div class="ss-left">
                                 <h3>
                                     <span>{{line.title_descript}}</span>
-                                    <a href="#">{{line.descrip}}</a>
+                                    <span style="font-size: large">{{line.descrip}}</span>
                                 </h3>
                             </div>
                             <div class="ss-right">{{line.title_img}}
@@ -117,14 +117,69 @@
             </div><!-- /page-right -->
             <div id="divParcel" class="page page-right divVoyage" ng-show="vm.isParcel">
                 <div class="container" >
-                    <div style="align-content: center;text-align: center;font-size: xx-large">Rapport en temp réel</div>
-                    <div class="ss-container">
-                        <div class="ss-row" ng-repeat="x in vm.data">
-                            <div class="ss-left"><h3>{{ vm.noms[$index] }}</h3></div>
-                            <div class="ss-right"><h3>{{x}}</h3></div>
-                        </div>
-                    </div>
-
+                    <div style="align-content: center;text-align: center;font-size: xx-large;margin-bottom: 150px">Rapport en temp réel</div>
+                    <table>
+                        <tr>
+                            <td>1</td>
+                            <td>{{vm.noms[0]}}</td>
+                            <td>{{vm.data[0]}}</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>{{vm.noms[1]}}</td>
+                            <td>{{vm.data[1]}}</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>{{vm.noms[2]}}</td>
+                            <td>{{vm.data[2]}}</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>{{vm.noms[3]}}</td>
+                            <td>{{vm.data[3]}}</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>{{vm.noms[4]}}</td>
+                            <td>{{vm.data[4]}}</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>{{vm.noms[5]}}</td>
+                            <td>{{vm.data[5]}}</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>{{vm.noms[6]}}</td>
+                            <td>{{vm.data[6]}}</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>{{vm.noms[7]}}</td>
+                            <td>{{vm.data[7]}}</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>{{vm.noms[8]}}</td>
+                            <td>{{vm.data[8]}}</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>{{vm.noms[9]}}</td>
+                            <td>{{vm.data[9]}}</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>{{vm.noms[10]}}</td>
+                            <td>{{vm.data[10]}}</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>{{vm.noms[11]}}</td>
+                            <td>{{vm.data[11]}}</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
             <a href="#" class="back back-right" style="top:50%;" title="back to intro">&larr;</a>

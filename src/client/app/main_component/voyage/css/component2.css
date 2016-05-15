@@ -45,7 +45,7 @@ body {
 }
 
 .side-left .overlay {
-	background: rgba(0,0,0,0.7);
+	background: aqua;
 }
 
 .side-right .overlay {
@@ -54,7 +54,7 @@ body {
 
 .side-left {
 	left: 0;
-	background: #47a3da;
+	background: aqua;
 	color: #fff;
 	outline: 1px solid #47a3da; /* avoid gap */
 }
@@ -150,13 +150,14 @@ body {
 	left: 3.5%;
 	-webkit-transform: translateX(-50%);
 	transform: translateX(-50%);
+    color: black;
 }
 
 .back-right {
 	right: 3.5%;
 	-webkit-transform: translateX(50%);
 	transform: translateX(50%);
-	color: #fff;
+	color: black;
 }
 
 .open-right .back-left,

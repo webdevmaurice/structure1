@@ -8,7 +8,7 @@ angular.module('seasafe')
         vm.isHuman = true;
         vm.isParcel = true;
         vm.data = [];
-        vm.noms = ['Pression atmosphérique',"Niveau d'oxygen",'Efficence Moteur','Niveau battery', 'RPM'];
+        vm.noms = ['Pression atmosphérique',"Niveau d'oxygen",' Moteur Central','Niveau battery', 'RPM', ' Moteur 1', ' Moteur 2', ' Moteur 3', ' Moteur 4', ' Moteur 5', ' Moteur 6', ' Moteur 7', ' Moteur 7'];
         vm.fnAtmos = function() {
             $http({
                 method: 'GET',
@@ -479,6 +479,7 @@ angular.module('seasafe')
                     vm.isParcel = true;
                     vm.isHuman = true;
                     vm.fnParcels();
+                    $('.intro-content').css({opacity:0});
                     reset();
                     classie.add( splitlayout, 'open-right' );
                 } );
@@ -524,13 +525,13 @@ angular.module('seasafe')
         };
         vm.fnScroll = function(id){
             if(id == 1) {
-                $('.cube').animate({scrollTop: '+='+$('#foncIntro').offset().top+'px'}, 3000);
+                $('.cube').animate({scrollTop: '+='+$('#foncIntro').offset().top+'px'}, 2000);
             }
             else if(id == 2) {
-                $('.cube').animate({scrollTop: '+='+$('#foncHuman').offset().top+'px'}, 5000);
+                $('.cube').animate({scrollTop: '+='+$('#foncHuman').offset().top+'px'}, 3000);
             }
             else if(id == 3) {
-                $('.cube').animate({scrollTop: '+='+$('#foncContrib').offset().top+'px'}, 6000);
+                $('.cube').animate({scrollTop: '+='+$('#foncContrib').offset().top+'px'}, 4000);
             }
         }
     }]);

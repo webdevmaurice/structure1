@@ -6,7 +6,7 @@
     height: 100%;
     /*border: 0px solid #067BC2;*/
     /*background-color: rgba(0,0,0,0);*/
-    border-image: url("space.gif") 109 stretch;
+    border-image: url("space.gif") 116 stretch;
     -webkit-backface-visibility: hidden;
     -webkit-transition: border-width 0.3s, background-color 0.3s, height 0s 0.3s;
     transition: border-width 0.3s, background-color 0.3s, height 0s 0.3s;
@@ -37,16 +37,18 @@
 }
 
 .bt-menu-trigger > ng-md-icon {
-    fill: white;
+    /*fill: white;*/
+    background:none;
 }
 
 .bt-menu-trigger:hover > ng-md-icon {
-    fill:rgba(255, 255, 255, 1);;
+    /*fill:rgba(255, 255, 255, 1);;*/
 }
 
 .bt-menu-trigger > ng-md-icon > svg{
      width: 48px;
      height: 48px;
+    background: none;
  }
 
 .bt-menu-trigger:hover > ng-md-icon > svg{

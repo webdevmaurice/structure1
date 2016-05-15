@@ -15,7 +15,7 @@ function openOverlay(div){
     $('#overlayCarte').show();
     $(div).show();
     $(div).animate({
-        width: "70%",
+        width: "70%"
     }, 1500);
 }
             var mauritius = new google.maps.LatLng(-20.3484, 57.5522);
@@ -48,7 +48,7 @@ function openOverlay(div){
                 //flightPath.setMap(map);
 
                 //mauritius
-                var markermauritius=new google.maps.Marker({position:mauritius,});
+                var markermauritius=new google.maps.Marker({position:mauritius});
                 markermauritius.setMap(map);
                 var infoMauritius = new google.maps.InfoWindow({content:"Mauritius"});
                 google.maps.event.addListener(markermauritius, 'click', function() {
@@ -58,7 +58,7 @@ function openOverlay(div){
                 });
 
                 //australia
-                var markeraustralia=new google.maps.Marker({position:australia,});
+                var markeraustralia=new google.maps.Marker({position:australia});
                 markeraustralia.setMap(map);
                 var infoAustralia = new google.maps.InfoWindow({content:"Australia"});
                 //infoAustralia.open(map,markeraustralia);
@@ -88,7 +88,7 @@ function openOverlay(div){
                 });
 
                 //northAmerica
-                var markernorthAmerica=new google.maps.Marker({position:northAmerica,});
+                var markernorthAmerica=new google.maps.Marker({position:northAmerica});
                 markernorthAmerica.setMap(map);
                 var infoNorthAmerica = new google.maps.InfoWindow({content:"northAmerica"});
                 //infoNorthAmerica.open(map,markernorthAmerica);
@@ -98,7 +98,7 @@ function openOverlay(div){
                 });
 
                 //southAmerica
-                var markersouthAmerica=new google.maps.Marker({position:southAmerica,});
+                var markersouthAmerica=new google.maps.Marker({position:southAmerica});
                 markersouthAmerica.setMap(map);
                 var infoSouthAmerica = new google.maps.InfoWindow({content:"SouthAmerica"});
                 //infoSouthAmerica.open(map,markersouthAmerica);
@@ -108,7 +108,7 @@ function openOverlay(div){
                 });
 
                 //africa
-                var markerafrica=new google.maps.Marker({position:africa,});
+                var markerafrica=new google.maps.Marker({position:africa});
                 markerafrica.setMap(map);
                 var infoAfrica = new google.maps.InfoWindow({content:"africa"});
                 //infoAfrica.open(map,markerafrica);
@@ -121,7 +121,7 @@ function openOverlay(div){
                     {
                         featureType: "all",
                         elementType: "labels",
-                        stylers: [
+                        styles: [
                             { visibility: "off" }
                         ]
                     },{
@@ -136,10 +136,7 @@ function openOverlay(div){
                 map.setOptions({styles: styles, minZoom: 2});
             }
 
-
-
-
-            google.maps.event.addDomListener(window, 'load', initialize);
+            window.setTimeout ( function() {google.maps.event.addDomListener(window, 'load', initialize);}, 0);
         }]);
 })();
 
