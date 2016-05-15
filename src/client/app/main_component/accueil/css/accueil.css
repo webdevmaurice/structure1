@@ -1,3 +1,38 @@
+/****title***/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+.area{
+    text-align:center;
+    font-size:1em;
+    color:#fff;
+    font-weight:700;
+    text-transform:uppercase;
+    animation:blur .95s ease-out infinite;
+    text-shadow:0px 0px 5px #fff,
+    0px 0px 7px #fff;
+}
+
+@keyframes blur{
+    from{
+        text-shadow:0px 0px 10px #fff,
+        0px 0px 2px #fff,
+        0px 0px 15px #fff,
+        0px 0px 15px #fff,
+        0px 0px 15px #fff,
+        0px 0px 15px #fff,
+        0px 0px 15px #fff,
+        0px 0px 15px #fff,
+        0px 0px 20px #fff,
+        0px 0px 20px #fff,
+        0px 0px 20px #7B96B8,
+        0px 0px 50px #7B96B8,
+        0px 10px 30px #7B96B8,
+        0px 10px 30px #7B96B8,
+        0px 10px 30px #7B96B8,
+        0px 10px 30px #7B96B8,
+        0px -10px 30px #7B96B8,
+        0px -10px 30px #7B96B8;}
+}
 /*** hover ***/
 .view {
     width: 300px;
@@ -10,7 +45,8 @@
     text-align: center;
     box-shadow: 1px 1px 2px #e6e6e6;
     cursor: default;
-    background: #fff url('images/bgimg.jpg') no-repeat center center
+    background: #fff url('images/bgimg.jpg') no-repeat center center;
+
 }
 .view .mask, .view .content {
     width: 300px;
@@ -141,219 +177,17 @@
     transform: translate(0px,0px);
     transition-delay: 0.5s;
 }
-/***end hover***/
 
-/****rocket***/
-*,
-*:before,
-*:after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: rgba(124, 183, 172, 1.0);
-    overflow: hidden;
-}
-
-a {
-    text-decoration: none;
-    color: #000;
-    font-weight: bold;
-}
-
-h1, p {
-    width: 30%;
-    margin-left: 5%;
-    float: left;
-    clear: right;
-}
-
-.spaceship {
-    float: left;
+.view h3{
+    height: 35px;
     position: relative;
-    margin-top: 30px;
-    margin-left: 30%;
-    top: 0px;
-    left: 0px;
-    width: 100px;
-    height: 100px;
-    background-color: rgba(248, 239, 190, 1.0);
-    border: 5px solid rgba(129, 30, 14, 1.0);
-    border-radius: 100px;
-    box-shadow: 9px -9px 0px -3px rgba(205, 179, 68, 1.0) inset;
+    background: black !important;
+    color: white;
+    top:15px;
 }
-.spaceship:active {
-    -webkit-animation: blast-off 5s;
-    -moz-animation: blast-off 5s;
-    -ms-animation: blast-off 5s;
-    -o-animation: blast-off 5s;
-}
-.spaceship:before,
-.spaceship:after {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 26px;
-    background-color: rgba(129, 30, 14, 1.0);
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
-    border-top-left-radius: 20px 50px;
-    border-top-right-radius: 20px 50px;
-    border-bottom-left-radius: 10px 2px;
-    border-bottom-right-radius: 10px 2px;
-    z-index: -1;
-}
-.spaceship:before {
-    top: 0px;
-    left: 0px;
-    box-shadow: 2px 0px rgba(129, 30, 14, 1.0) inset,
-    0px 4px rgba(129, 30, 14, 1.0) inset,
-    0px -3px rgba(129, 30, 14, 1.0) inset,
-    4px 0px 0px rgba(250, 106, 62, 1.0) inset,
-    95px 0px rgba(129, 30, 14, 1.0);
-    z-index: -2;
-}
-.spaceship:after {
-    top: 39px;
-    left: 29px;
-    box-shadow: 2px 0px rgba(129, 30, 14, 1.0) inset,
-    0px 4px rgba(129, 30, 14, 1.0) inset,
-    0px -2px rgba(129, 30, 14, 1.0) inset,
-    6px 0px rgba(250, 106, 62, 1.0) inset;
-    z-index: 1;
-}
+    /***end hover***/
 
-.flames,
-.flames:before {
-    position: absolute;
-    width: 14px;
-    height: 100px;
-    background-color: rgba(205, 179, 68, 1.0);
-    border-bottom-left-radius: 	7px 90px;
-    border-bottom-right-radius: 7px 90px;
-    box-shadow: 0px -30px 0px 5px rgba(248, 239, 190, 1.0) inset;
-}
-.flames {
-    top: 8px;
-    left: -41px;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
-    z-index: -2;
-}
-.flames:before {
-    content: '';
-    top: 0px;
-    left: 94px;
-}
 
-.flames-2 {
-    position: absolute;
-    top: 41px; left: -22px;
-    height: 130px;
-    width: 14px;
-    border-bottom-left-radius: 	40px 500px;
-    border-bottom-right-radius: 40px 500px;
-    background-color: rgba(205, 179, 68, 1.0);
-    border: 5px solid rgba(248, 239, 190, 1.0);
-    border-top: none;
-    border-bottom: 40px solid rgba(248, 239, 190, 1.0);
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-.flames-2:before {
-    content: '';
-    position: absolute;
-    top: -13px;
-    left: -34px;
-    width: 7px;
-    height: 7px;
-    background-color: rgba(129, 30, 14, 1.0);
-    border-radius: 7px;
-    box-shadow: 11px 10px 0px 0px rgba(129, 30, 14, 1.0),
-    54px 10px rgba(129, 30, 14, 1.0),
-    64px 0px rgba(129, 30, 14, 1.0);
-}
-
-@-webkit-keyframes blast-off {
-    0%, 100% { top: 0px; left: 0px; 	}
-    1% 	{ top: 2px; left: 2px; 				}
-    2% 	{ top: -2px; left: 2px; 			}
-    3% 	{ top: 4px; left: -2px; 			}
-    4% 	{ top: 4px; left: 0px; 				}
-    5% 	{ top: -3px; left: -2px; 			}
-    6% 	{ top: 4px; left: 5px; 				}
-    7% 	{ top: -4px; left: 7px; 			}
-    8% 	{ top: 5px; left: -8px; 			}
-    9% 	{ top: -4px; left: 6px; 			}
-    10% { top: 3px; left: -9px; 			}
-    11% { top: 9px; left: -5px; 			}
-    12% { top: 2px; left: 5px; 				}
-    99% { top: -9999px; left: 9999px; }
-}
-@-moz-keyframes blast-off {
-    0%, 100% { top: 0px; left: 0px; 	}
-    1% 	{ top: 2px; left: 2px; 				}
-    2% 	{ top: -2px; left: 2px; 			}
-    3% 	{ top: 4px; left: -2px; 			}
-    4% 	{ top: 4px; left: 0px; 				}
-    5% 	{ top: -3px; left: -2px; 			}
-    6% 	{ top: 4px; left: 5px; 				}
-    7% 	{ top: -4px; left: 7px; 			}
-    8% 	{ top: 5px; left: -8px; 			}
-    9% 	{ top: -4px; left: 6px; 			}
-    10% { top: 3px; left: -9px; 			}
-    11% { top: 9px; left: -5px; 			}
-    12% { top: 2px; left: 5px; 				}
-    99% { top: -9999px; left: 9999px; }
-}
-@-ms-keyframes blast-off {
-    0%, 100% { top: 0px; left: 0px; 	}
-    1% 	{ top: 2px; left: 2px; 				}
-    2% 	{ top: -2px; left: 2px; 			}
-    3% 	{ top: 4px; left: -2px; 			}
-    4% 	{ top: 4px; left: 0px; 				}
-    5% 	{ top: -3px; left: -2px; 			}
-    6% 	{ top: 4px; left: 5px; 				}
-    7% 	{ top: -4px; left: 7px; 			}
-    8% 	{ top: 5px; left: -8px; 			}
-    9% 	{ top: -4px; left: 6px; 			}
-    10% { top: 3px; left: -9px; 			}
-    11% { top: 9px; left: -5px; 			}
-    12% { top: 2px; left: 5px; 				}
-    99% { top: -9999px; left: 9999px; }
-}
-@-o-keyframes blast-off {
-    0%, 100% { top: 0px; left: 0px; 	}
-    1% 	{ top: 2px; left: 2px; 				}
-    2% 	{ top: -2px; left: 2px; 			}
-    3% 	{ top: 4px; left: -2px; 			}
-    4% 	{ top: 4px; left: 0px; 				}
-    5% 	{ top: -3px; left: -2px; 			}
-    6% 	{ top: 4px; left: 5px; 				}
-    7% 	{ top: -4px; left: 7px; 			}
-    8% 	{ top: 5px; left: -8px; 			}
-    9% 	{ top: -4px; left: 6px; 			}
-    10% { top: 3px; left: -9px; 			}
-    11% { top: 9px; left: -5px; 			}
-    12% { top: 2px; left: 5px; 				}
-    99% { top: -9999px; left: 9999px; }
-}
-/***end**/
-
-#target{
- float: right;
-}
 #homeTitle{
     color: white;
     font-family: monospace;
@@ -381,11 +215,17 @@ h1, p {
 
 }
 
+#target{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #earth {
     background-image: url('../img/astro.png');
     background-repeat: no-repeat;
     width: 320px;
-    height: 354px;
+    height: 341px;
     /* a black shadow from left and white from right */
 
     position: relative;
@@ -397,9 +237,9 @@ h1, p {
 }
 
 @keyframes move {
-    0%   { left: 200px;  }
-    70%  { left: -200px; }
-    100% { left: 200px;  }
+    0%   { left: 350px;  }
+    70%  { left: -150px; }
+    100% { left: 350px;  }
 }
 
 @keyframes scale {

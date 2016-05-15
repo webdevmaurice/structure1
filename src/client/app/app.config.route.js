@@ -30,6 +30,11 @@
                     controller: 'VoyageCtrl1',
                     controllerAs: 'vm'
                 })
+                .when('/abbord', {
+                    templateUrl: baseUrl + 'abbord/abbord.html',
+                    controller: 'AbbordController',
+                    controllerAs: 'vm'
+                })
                  /*
                  .when('/about', {
                  templateUrl: baseUrl + 'about/about.html',
