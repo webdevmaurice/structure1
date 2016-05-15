@@ -3,7 +3,7 @@
  */
 
 angular.module('seasafe')
-    .controller('VoyageCtrl1',['$window','$location','$anchorScroll', function VoyageCtrl ($window, $location, $anchorScroll) {
+    .controller('VoyageCtrl1',['$window','$location','$anchorScroll', '$http', function VoyageCtrl ($window, $location, $anchorScroll, $http) {
         var vm = this;
         vm.isHuman = true;
         vm.isParcel = true;
@@ -18,7 +18,7 @@ angular.module('seasafe')
                 // this callback will be called asynchronously
                 // when the response is available
                 console.log(response);
-                gvm.data = response.data;
+                vm.data = response.data;
             }, function errorCallback(response) {
                 // called asynchronously if an error occurs
                 // or server returns response with an error status.
@@ -26,7 +26,7 @@ angular.module('seasafe')
             });
         };
         setInterval(function(){
-            gvm.fnAtmos();
+            vm.fnAtmos();
         }, 2000);
         var $sidescroll	= (function() {
 

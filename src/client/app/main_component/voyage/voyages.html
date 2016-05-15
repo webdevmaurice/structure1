@@ -117,16 +117,14 @@
             </div><!-- /page-right -->
             <div id="divParcel" class="page page-right divVoyage" ng-show="vm.isParcel">
                 <div class="containerx" >
-                    <div style="align-content: center;text-align: center;font-size: xx-large">Donnée en temp réel</div>
-                    <div class="col-md-1 col-offset-6 centered">
-                        <table>
-                            <tr ng-repeat="x in vm.data">
-                                <td>{{ $index + 1 }}</td>
-                                <td>{{ vm.noms[$index] }}</td>
-                                <td>{{ x }}</td>
-                            </tr>
-                        </table>
+                    <div style="align-content: center;text-align: center;font-size: xx-large">Rapport en temp réel</div>
+                    <div class="ss-container">
+                        <div class="ss-row" ng-repeat="x in vm.data">
+                            <div class="ss-left"><h3>{{ vm.noms[$index] }}</h3></div>
+                            <div class="ss-right"><h3>{{x}}</h3></div>
+                        </div>
                     </div>
+
                 </div>
             </div>
             <a href="#" class="back back-right" style="top:50%;" title="back to intro">&larr;</a>
