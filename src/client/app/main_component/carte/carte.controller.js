@@ -5,7 +5,6 @@
     angular.module('seasafe')
         .controller('CarteController', [function(){
             var cvm = this;
-            console.info('CarteController');
 
             $('#closeCarte').click(function(){
                 $('#overlayCarte').fadeOut();

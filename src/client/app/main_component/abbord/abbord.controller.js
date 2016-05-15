@@ -5,7 +5,6 @@
     angular.module('seasafe')
         .controller('AbbordController', [function(){
             var avm = this;
-            console.info('AbbordController');
         }]);
 
 })();

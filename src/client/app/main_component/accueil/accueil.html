@@ -40,48 +40,10 @@
             <h3>Connectez vous</h3>
             <img src="client/app/main_component/accueil/img/social.png" />
             <div class="mask">
-                <p>Connectez vous par le réseausocial de votre choix.</p>
+                <p>Connectez vous par le réseau social de votre choix.</p>
                 <a type="button" class="info" data-toggle="modal" data-target="#myModal">Se connecter</a>
             </div>
         </div>
 
     </div>
-
 </div>
-
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Modal Header</h4>
-            </div>
-            <div class="modal-body">
-                <div id="oa_social_login_container"></div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<script type="text/javascript">
-
-    /* Replace #your_callback_uri# with the url to your own callback script */
-    var your_callback_script = 'server/webservice/callback_handler.php';
-
-    /* Embeds the buttons into the container oa_social_login_container */
-    var _oneall = _oneall || [];
-    _oneall.push(['social_login', 'set_providers', ['facebook', 'google', 'twitter']]);
-    _oneall.push(['social_login', 'set_callback_uri', your_callback_script]);
-    _oneall.push(['social_login', 'do_render_ui', 'oa_social_login_container']);
-
-</script>
