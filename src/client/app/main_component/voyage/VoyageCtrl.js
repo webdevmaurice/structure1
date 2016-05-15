@@ -8,7 +8,7 @@ angular.module('seasafe')
         vm.isHuman = true;
         vm.isParcel = true;
         vm.data = [];
-        vm.noms = ['Pression atmosphérique',"Niveau d'oxygen",' Moteur Central','Niveau battery', 'RPM', ' Moteur 1', ' Moteur 2', ' Moteur 3', ' Moteur 4', ' Moteur 5', ' Moteur 6', ' Moteur 7', ' Moteur 7'];
+        vm.noms = ['Pression atmosphérique',"Système de conditionnement d'air",' Moteur Central','Niveau battery', 'Température', ' Moteur 1', ' Moteur 2', ' Moteur 3', ' Moteur 4', ' Moteur 5', ' Moteur 6', ' Moteur 7', ' Moteur 7'];
         vm.fnAtmos = function() {
             $http({
                 method: 'GET',
