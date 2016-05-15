@@ -5,33 +5,33 @@
                 <div class="side side-left" >
                     <header class="codropsheader clearfix">
                     </header>
-                    <div style="padding-left: 75%"><h1>Guide de</h1></div>
+                    <div style="padding-left: 75%"></div>
                     <div class="intro-content" >
                         <div class="profile"><img src="client/app/main_component/voyage/img/icon_Human.png" alt="profile1"></div>
-                        <h1><span>Humaines </span></h1>
+                        <h1><span>Info WEBYOU 2 </span></h1>
                     </div>
                     <div class="overlay"></div>
                 </div>
                 <div class="side side-right">
-                    <div style="padding-right: 75%"><h1>Transfer</h1></div>
+                    <div style="padding-right: 75%"></div>
                     <div class="intro-content">
                         <div class="profile"><img src="client/app/main_component/voyage/img/parcel.png" alt="profile2"></div>
-                        <h1><span>Colis </span></h1>
+                        <h1><span>Parametres temps réel </span></h1>
                     </div>
                     <div class="overlay"></div>
                 </div>
             </div><!-- /intro -->
             <div id="divHuman" class="page page-left divVoyage" ng-show="vm.isHuman">
-                <h2 class="ss-subtitle">Guide de Transfer</h2>
+                <h2 class="ss-subtitle">Info Webyouz 2</h2>
                 <div class="menuScroll" style="text-align: left;position:absolute;">
                     <md-button ng-click="vm.fnScroll(1)" class="md-fab" aria-label="resume"><md-tooltip md-direction="top">Resumé</md-tooltip><md-icon class="md-36">lightbulb_outline</md-icon></md-button>
-                    <md-button ng-click="vm.fnScroll(2)" class="md-fab" aria-label="resume"><md-tooltip md-direction="top">Fonctionnement</md-tooltip><md-icon class="md-36">build</md-icon></md-button>
-                    <md-button ng-click="vm.fnScroll(3)" class="md-fab" aria-label="resume"><md-tooltip md-direction="top">Contribution</md-tooltip><md-icon class="md-36">supervisor_account</md-icon></md-button>
+                    <md-button ng-click="vm.fnScroll(2)" class="md-fab" aria-label="resume"><md-tooltip md-direction="top">Comfort</md-tooltip><md-icon class="md-36">build</md-icon></md-button>
+                    <md-button ng-click="vm.fnScroll(3)" class="md-fab" aria-label="resume"><md-tooltip md-direction="top">Securité</md-tooltip><md-icon class="md-36">supervisor_account</md-icon></md-button>
                 </div>
                 <div id="ss-container" class="ss-container">
                     <div class="ss-row" id="foncIntro">
-                        <div class="ss-left"><h1>En</h1></div>
-                        <div class="ss-right"><h1>Resumé</h1></div>
+                        <div class="ss-left"><h1></h1></div>
+                        <div class="ss-right"><h1></h1></div>
                     </div>
                     <div class="ss-row {{line.class}}" ng-repeat="line in vm.arrayData.brief">
                         <div ng-if="$index%2 == 0">
@@ -58,8 +58,8 @@
                         </div>
                     </div>
                     <div class="ss-row" id="foncHuman">
-                        <div class="ss-left"><h1>Mode de </h1></div>
-                        <div class="ss-right"><h1>fonctionnement</h1></div>
+                        <div class="ss-left"><h1></h1></div>
+                        <div class="ss-right"><h1></h1></div>
                     </div>
                     <div class="ss-row {{line.class}}" ng-repeat="line in vm.arrayData.operation">
                         <div ng-if="$index%2 == 0">
@@ -86,7 +86,7 @@
                         </div>
                     </div>
                     <div class="ss-row" id="foncContrib">
-                        <div class="ss-left"><h1>Contribution </h1></div>
+                        <div class="ss-left"><h1> </h1></div>
                         <div class="ss-right"><h1></h1></div>
                     </div>
                     <div class="ss-row {{line.class}}" ng-repeat="line in vm.arrayData.contribution">
@@ -116,71 +116,16 @@
                 </div>
             </div><!-- /page-right -->
             <div id="divParcel" class="page page-right divVoyage" ng-show="vm.isParcel">
-                <h2 class="ss-subtitle">Guide de Transfer </h2>
-                <!--div id="ss-links" class="ss-links">
-                    <a scroll-to-item scroll-to="#summary">Brief</a>
-                    <a scroll-to-item scroll-to="#process">Process</a>
-                    <a href="#destinations">Destinations</a>
-                    <a href="#safety">Safety</a>
-                    <a href="#payment">Payment</a>
-                    <a href="#test">test</a>
-                </div-->
-                <div id="ss-container" class="ss-container">
-                    <div class="ss-row">
-                        <div class="ss-left"><h1>En </h1></div>
-                        <div class="ss-right"><h1>resumé</h1></div>
-                    </div>
-                    <div class="ss-row {{line.class}}" ng-repeat="line in vm.arrayData.brief">
-                        <div ng-if="$index%2 == 0">
-                            <div class="ss-left">{{line.title_img}}
-                                <a href="#" class="ss-circle {{line.b_img_class}}"></a>
-                            </div>
-                            <div class="ss-right">
-                                <h3>
-                                    <span>{{line.title_descript}}</span>
-                                    <a href="#">{{line.descrip}}</a>
-                                </h3>
-                            </div>
-                        </div>
-                        <div ng-if="$index%2 == 1">
-                            <div class="ss-left">
-                                <h3>
-                                    <span>{{line.title_descript}}</span>
-                                    <a href="#">{{line.descrip}}</a>
-                                </h3>
-                            </div>
-                            <div class="ss-right">{{line.title_img}}
-                                <a href="#" class="ss-circle {{line.b_img_class}}"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ss-row">
-                        <div class="ss-left"><h1>Mode de </h1></div>
-                        <div class="ss-right"><h1>fonctionnement</h1></div>
-                    </div>
-                    <div class="ss-row {{line.class}}" ng-repeat="line in vm.arrayData.operation">
-                        <div ng-if="$index%2 == 0">
-                            <div class="ss-left">{{line.title_img}}
-                                <a href="#" class="ss-circle {{line.b_img_class}}"></a>
-                            </div>
-                            <div class="ss-right">
-                                <h3>
-                                    <span>{{line.title_descript}}</span>
-                                    <a href="#">{{line.descrip}}</a>
-                                </h3>
-                            </div>
-                        </div>
-                        <div ng-if="$index%2 == 1">
-                            <div class="ss-left">
-                                <h3>
-                                    <span>{{line.title_descript}}</span>
-                                    <a href="#">{{line.descrip}}</a>
-                                </h3>
-                            </div>
-                            <div class="ss-right">{{line.title_img}}
-                                <a href="#" class="ss-circle {{line.b_img_class}}"></a>
-                            </div>
-                        </div>
+                <div class="containerx" >
+                    <div style="align-content: center;text-align: center;font-size: xx-large">Donnée en temp réel</div>
+                    <div class="col-md-1 col-offset-6 centered">
+                        <table>
+                            <tr ng-repeat="x in vm.data">
+                                <td>{{ $index + 1 }}</td>
+                                <td>{{ vm.noms[$index] }}</td>
+                                <td>{{ x }}</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>

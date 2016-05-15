@@ -218,10 +218,10 @@ h2.ss-subtitle:after{
     color: rgba(255,255,255,1);
 }
 .ss-circle-team{
-    background-image:url(../img/idea.jpg);
+    background-image:url(../img/wasa.png);
 }
 .ss-circle-hub{
-    background-image:url(../img/hub.jpg);
+    background-image:url(../img/3.jpg);
 }
 .ss-circle-entry{
      background-image:url(../img/entry.jpg);
@@ -230,7 +230,7 @@ h2.ss-subtitle:after{
      background-image:url(../img/exit.jpg);
  }
 .ss-circle-voyage{
-    background-image:url(../img/voyage.jpg);
+    background-image:url(../img/planete.gif);
 }
 .ss-circle-bill{
     background-image:url(../img/bill.jpg);
@@ -248,7 +248,7 @@ h2.ss-subtitle:after{
     background-image: url(../img/scientists.jpg);
 }
 .ss-circle-5{
-    background-image: url(../img/organisateurs.png);
+    background-image: url(../img/pod.jpg);
 }
 .ss-circle-6{
     background-image: url(../img/time.jpg);

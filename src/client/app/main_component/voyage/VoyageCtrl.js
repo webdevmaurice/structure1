@@ -7,6 +7,27 @@ angular.module('seasafe')
         var vm = this;
         vm.isHuman = true;
         vm.isParcel = true;
+        vm.data = [];
+        vm.noms = ['Pression atmosphérique',"Niveau d'oxygen",'Efficence Moteur','Niveau battery', 'RPM'];
+        vm.fnAtmos = function() {
+            console.log('PRESSURE');
+            $http({
+                method: 'GET',
+                url: 'server/webservice/pressure.php'
+            }).then(function successCallback(response) {
+                // this callback will be called asynchronously
+                // when the response is available
+                console.log(response);
+                gvm.data = response.data;
+            }, function errorCallback(response) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+                console.log(response);
+            });
+        };
+        setInterval(function(){
+            gvm.fnAtmos();
+        }, 2000);
         var $sidescroll	= (function() {
 
             // the row elements
@@ -130,6 +151,7 @@ angular.module('seasafe')
                         },
                         // when scrolling the page change the position of each row
                         'scroll.Scrolling' : function( event ) {
+                            console.log('TEST');
                             // set a timeout to avoid that the
                             // placeRows function gets called on every scroll trigger
                             if( anim ) return false;
@@ -171,8 +193,7 @@ angular.module('seasafe')
                         'scroll.Scrolling' : function( event ) {
                             // set a timeout to avoid that the
                             // placeRows function gets called on every scroll trigger
-                            console.log('RTEST');
-                            $('.menuScroll').animate({top:$(this).scrollTop()+50},10,"linear");
+                            $('.menuScroll').animate({top:$(this).scrollTop()+30},10,"linear");
                             $('.side').animate({top:$(this).scrollTop()},0,"linear");
                             $('.back').animate({top:$(this).scrollTop()+($(window).height()/2)},0,"linear");
                             if( anim ) return false;
@@ -305,23 +326,18 @@ angular.module('seasafe')
 
 
         this.arrayData =    { brief : [
-            {b_img_class:"ss-circle-team", title_img:"Conception",    descrip:"L'idée c'est de pouvoir passer d'un île à un autre en toute securité et rapidement.", title_descript:"FastLap Limitée", class:"ss-medium"},
-            {b_img_class:"ss-circle-1", title_img:"Vitesse",           descrip:"Construite avec un 200YB / s ( yottaoctet ) capacité de câble , il peut traiter simultanément un transfert de 1 millon personnes par seconde", title_descript:"", class:"ss-medium"},
-            {b_img_class:"ss-circle-2", title_img:"îles",    descrip:"Ce moyen va rélier les sept îles d'ocean Indien notamment Maurice, Rodrigues, Reunion, Grands Comores, Mayotte, Seychelles et Madagascar", title_descript:"", class:"ss-large"},
-            {b_img_class:"ss-circle-3", title_img:"Protocols", descrip:"Ce service est regularisé et mis fonctionnel par la collaboration de nos sept îles.", title_descript:"", class:"ss-medium"}
+            {b_img_class:"ss-circle-team", title_img:"Résumé",    descrip:"Une initiative de la Webcup Aeronautics and Space administration", title_descript:"WASA", class:"ss-medium"},
+            {b_img_class:"ss-circle-1", title_img:"",           descrip:"Construit comme service commercial accessible à tous", title_descript:"", class:"ss-medium"},
+            {b_img_class:"ss-circle-2", title_img:"",    descrip:"Reservation des voyages s'effectura très prochainement ", title_descript:"", class:"ss-large"}
         ],
             operation : [
-                {b_img_class:"ss-circle-hub", title_img:"Emplacement",   descrip:"Veuillez vous rendre dans un de nos emplacement se situant dans votre île", title_descript:"", class:"ss-medium"},
-                {b_img_class:"ss-circle-entry", title_img:"Entrée", descrip:"Traverser le portail normalement", title_descript:"", class:"ss-medium"},
-                {b_img_class:"ss-circle-voyage", title_img:"Lecture des données",descrip:"Notre système AI récuperas automatiquement les infos requis comme la destination, l'objectif du voyage", title_descript:"", class:"ss-medium"},
-                {b_img_class:"ss-circle-bill", title_img:"Payment",  descrip:"Avec les données récuperer par le AI, notre système débitera directement le montant requis de votre compte bancaire", title_descript:"", class:"ss-medium"},
-                {b_img_class:"ss-circle-exit", title_img:"Temps",  descrip:"La téléportation prendras approx 2s et vous vous retrouverez à votre destination, Simple et Efficace", title_descript:"", class:"ss-medium"}
+                {b_img_class:"ss-circle-hub", title_img:"Comfort",   descrip:"Nous avons tout mis en oeuvre pour  vous: la chambre, loisirs et petite sortie en espace", title_descript:"", class:"ss-medium"},
+                {b_img_class:"ss-circle-entry", title_img:"Sortie espace", descrip:"Des petites sorties dans l'espace possible avec nos pods", title_descript:"", class:"ss-medium"},
+                {b_img_class:"ss-circle-voyage", title_img:"Vue panoramique",descrip:"Profitez infiniment durant votre séjour d'une vue impressionante sur notre planète.", title_descript:"", class:"ss-medium"}
             ],
         contribution : [
-            {b_img_class:"ss-circle-4", title_img:"Recherche/construction",   descrip:"Des scientist mondialement connus ont été recruté pour la mis en place de ce fameux projet.", title_descript:"", class:"ss-medium"},
-            {b_img_class:"ss-circle-5", title_img:"Organisateurs", descrip:"Le bon deroulemnt du projet fut par le bias d'une organisation constitué des representant  des sept îles.", title_descript:"", class:"ss-medium"},
-            {b_img_class:"ss-circle-6", title_img:"Temps Contruction",descrip:"La construction a pris 3 ans pour s'accomplire.", title_descript:"", class:"ss-medium"},
-            {b_img_class:"ss-circle-7", title_img:"Development Siteweb",  descrip:"L'équipe d'élite de la HDM a pris l'initiative de vous faire prendre connaisance de ce mode de transport.", title_descript:"", class:"ss-medium"}
+            {b_img_class:"ss-circle-4", title_img:"Sécurité",   descrip:"Des mesures pour garantir la sécurité du départ jusqu'au l'arriver.", title_descript:"", class:"ss-medium"},
+            {b_img_class:"ss-circle-5", title_img:"", descrip:"Un pod de secours toujours disponible et paré au lancement au cas ou la logiciel detect une anomalie", title_descript:"", class:"ss-medium"}
         ]};
 
         this.arrayParcels =    { brief : [

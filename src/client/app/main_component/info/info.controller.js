@@ -55,7 +55,7 @@
 
             });
 
-            gvm.fnAtmos = function() {
+            vm.fnAtmos = function() {
                 console.log('PRESSURE');
                 $http({
                     method: 'GET',
@@ -73,7 +73,7 @@
             }
 
             setInterval(function(){
-                gvm.fnAtmos();
+                vm.fnAtmos();
             }, 2000)
         }]);
 })();
